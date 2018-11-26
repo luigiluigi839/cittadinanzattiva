@@ -1,0 +1,120 @@
+body {
+	background-color: #white;
+	max-width: 1024px;
+	margin: auto;
+}
+
+.core {
+	background-color: #e6e6e6;
+	margin: auto;
+	overflow: hidden;
+}
+
+.header {
+	marign: 0;
+	padding: 0;
+}
+
+.header h1{
+	margin: 0;
+	padding: 1em;
+	text-align: center;
+	color: white;
+	background-image: url("../img/header.jpg");
+	background-position: center;
+}
+
+.nav {
+	margin: 0;
+	padding: 0;
+}
+
+.nav ul{
+	background-color: #004080;
+	margin: 0;
+	text-align: center;
+}
+.nav li {
+	display: inline-block;
+	margin-left: -0.25em;
+	padding: 0;
+	text-align: center;
+}
+
+#activeLink {
+	background-color: white;
+	color: #004080;
+	padding: 1em 2em 1em 2em;
+}
+
+.nav li:first-of-type {
+	border-left: 1px solid white;
+}
+
+.nav a {
+	border-right: 1px solid white;
+	background-color: #004080;
+	color: white;
+	display: block;
+	padding: 1em 1.5em 1em 1.5em;
+}
+
+.nav a:hover {
+	background-color: white;
+	color: #004080;
+}
+
+#breadcrumb {
+	margin: 1em;
+	text-align:left;
+}
+
+#info {
+	border-right: 1px solid #bfbfbf;
+	float: left;
+	width: 50%;
+}
+
+#info h2, h3 {
+	font-family: "Times New Roman";
+	text-align: center;
+}
+
+#info p {
+	padding: 1em 3em 1em 3em;
+	text-align: center;
+}
+
+#log {
+	overflow: hidden;
+	padding: 1em 2em 1em 2em;
+	text-align: center;
+}
+
+form {
+	text-align: left;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+legend {
+	text-align: center;
+}
