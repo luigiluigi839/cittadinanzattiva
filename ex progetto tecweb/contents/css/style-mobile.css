@@ -1,0 +1,237 @@
+
+#logo {
+  display: none;
+}
+
+#info_box h2 {
+  display: none;
+}
+#booking-button {
+  display: none;
+}
+
+#home-link {
+  margin-right: 1em;
+}
+
+#booking-box {
+  background-image: none;
+  border-bottom: 1px solid #DDD;
+  padding: 0;
+  overflow: auto;
+}
+
+#booking-form {
+  margin: auto;
+  width: 70%;
+}
+
+#booking-form {
+  text-align: center;
+}
+
+
+.column-sm {
+  width: 50%;
+  margin: auto;
+  float: none;
+}
+
+#service-icons img {
+  padding-bottom: 0;
+}
+
+#social-footer img {
+  width: 10%;
+}
+
+.column-sm p {
+  padding-bottom: 1em;
+}
+
+.menu {
+  display: none;
+}
+
+.tile {
+  padding-top: 2em;
+}
+
+.tile-room {
+  padding-top: 3em;
+}
+.tile-room .rightbox h3 {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  padding: 0;
+}
+
+.tile-room .booking-button-camera {
+  margin-bottom: 0;
+}
+
+#naventry-menu {
+  font-size: 1.3em;
+  display: block;
+  font-weight: bold;
+  padding: 0.9em 1.6em;
+  color: white;
+  text-decoration: none;
+  text-align: right;
+}
+
+#naventry-menu img {
+  margin-left: 1em;
+  margin-bottom: -6px;
+}
+
+#navbar {
+  display: block;
+  overflow: auto;
+}
+
+#mobilenavbar li a:visited {
+  color: #f08080;
+}
+
+#mobilenavbar {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  overflow: auto;
+  position: absolute;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+#mobilenavbar ul li, #navbar ul li {
+  float: none;
+}
+
+#naventry-prenota {
+  display:block;
+}
+
+.column {
+  float: none;
+  margin: auto;
+  width: 70%;
+}
+
+.leftbox {
+  padding-top: 65%;
+  width: 90%;
+  float: none;
+  margin: auto;
+}
+
+.rightbox {
+  width: 70%;
+  margin: auto;
+}
+
+.section_title img {
+  width: 50%;
+  height:50%;
+}
+
+
+#tel-link, #mail-link {
+  text-decoration: none;
+}
+
+ #tel-link span {
+   text-decoration: underline;
+ }
+
+ .rightbox a {
+   float:none;
+ }
+.costo {
+  font-size: 1.1em;
+}
+
+.booking-button-camera {
+    margin-top: 0;
+    margin: auto;
+    display: block;
+    float: none;
+    text-align: center;
+    margin-bottom: 2em;
+ }
+
+
+
+ .contactbox {
+   float: none;
+   margin: auto;
+   width: 70%;
+   margin-bottom: 2em;
+ }
+
+ .contactbox img {
+   height: 15em;
+ }
+
+ .select-box {
+   padding: 0;
+ }
+
+ #note-box {
+   width: 70%;
+   margin: auto;
+   margin-bottom: 2em;
+ }
+
+ #note-box h3 {
+   text-align: center;
+   padding-left: 0;
+ }
+
+ #booking-submit-button {
+   display: block;
+   float: none;
+   margin: auto;
+   margin-bottom: 2em;
+ }
+
+/* -----bottone prenotazione camera */
+.posti img{
+    display:none;
+}
+.posti{
+    text-align: center;
+    float: none;
+    font-size: 1.2em;
+    margin: auto;
+    width: 100%;
+}
+
+.booking-button-camera-container {
+  float: none;
+  width: 100%;
+  margin-top: 1.5em;
+}
+
+#InternalNav a {
+    padding: 0.5em;
+}
+
+.home-link {
+  width: 100%;
+}
+
+.home-link .info-container {
+  text-align: center;
+  width: 100%;
+}
+
+.home-link .info-container h1 {
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+.info-container {
+  padding-left: 0;
+}

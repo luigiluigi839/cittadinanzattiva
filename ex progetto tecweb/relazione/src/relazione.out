@@ -1,0 +1,32 @@
+\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.2}{Utenti destinatari}{}% 2
+\BOOKMARK [1][-]{section.3}{Accessibilit\340}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Separazione tra contenuto, presentazione e struttura}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Breadcrumb}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Tabindex}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Screen reader}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{Colori}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Fasi di Sviluppo}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Sviluppo generale}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Divisione dei compiti}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{Struttura}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Gerarchia dei File}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.2}{Scelta HTML5}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.3}{Le pagine}{section.5}% 15
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Home/index.php}{subsection.5.3}% 16
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Come raggiungerci/come\137raggiungerci.php}{subsection.5.3}% 17
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Le nostre camere/camere.php}{subsection.5.3}% 18
+\BOOKMARK [3][-]{subsubsection.5.3.4}{Attorno a noi/dintorni.php}{subsection.5.3}% 19
+\BOOKMARK [3][-]{subsubsection.5.3.5}{I nostri servizi/servizi.php}{subsection.5.3}% 20
+\BOOKMARK [3][-]{subsubsection.5.3.6}{Prenota/prenota.php}{subsection.5.3}% 21
+\BOOKMARK [1][-]{section.6}{Presentazione}{}% 22
+\BOOKMARK [2][-]{subsection.6.1}{style.css}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.2}{style-mobile.css e style-tablet.css}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.3}{printS.css}{section.6}% 25
+\BOOKMARK [1][-]{section.7}{Comportamento}{}% 26
+\BOOKMARK [2][-]{subsection.7.1}{PHP}{section.7}% 27
+\BOOKMARK [3][-]{subsubsection.7.1.1}{Creazione dinamica pagine}{subsection.7.1}% 28
+\BOOKMARK [2][-]{subsection.7.2}{JavaScript}{section.7}% 29
+\BOOKMARK [1][-]{section.8}{Rappresentazione dei Dati}{}% 30
+\BOOKMARK [1][-]{section.9}{Validazione e test d'utilizzo}{}% 31
+\BOOKMARK [2][-]{subsection.9.1}{Password}{section.9}% 32

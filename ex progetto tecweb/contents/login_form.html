@@ -1,0 +1,19 @@
+<script src="contents/javascript/controlli.js"></script>
+<span id="errore_email" class="val_error"></span>
+<span id="errore_pass" class="val_error"></span>
+<div class="tile">
+    <div class="inner">
+        <h2>PANNELLO DI CONTROLLO</h2>
+        <h3 lang="en">LOGIN</h3>
+        <form method="POST" onsubmit="return login()">
+          <div id="login-form" class="column">
+            <label lang="en" for="email">Email</label><br>
+            <input type="text" id="email" name="email" tabindex="8"/><br>
+            <label lang="en" for="password">Password</label><br>
+            <input type="password" id="password" name="password" tabindex="9"/><br>
+            <button type="submit" name="accedi" value="Accedi" id="login-btn" tabindex="10">Accedi</button>
+        </div>
+        </form>
+    </div>
+</div>
+

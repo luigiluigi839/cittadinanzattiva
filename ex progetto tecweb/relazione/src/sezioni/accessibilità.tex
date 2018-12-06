@@ -1,0 +1,53 @@
+\section{Accessibilità}
+\subsection{Separazione tra contenuto, presentazione e struttura}
+Per migliorare l'accesso al sito da parte degli utenti con differenti disabilità e per aiutare i motori di ricerca, è stata mantenuta la separazione tra struttura, presentazione e comportamento.
+La prima è stata sviluppata tramite documenti XHTML Strinct 1.0 e HTML5, i quali richiamano i fogli di stile esterni CSS che implementano la presentazione.
+Infine, per il comportamento, sono stati realizzati script esterni con PHP e script Javascript per il controllo dei dati inseriti.
+\subsection{Breadcrumb}
+Il \textit{breadcrumb} è stato inserito solo nella stampa in quanto, il basso livello di profondità del sito, non ne giustifica la presenza. La scheda evidenziata di colore rosso permette all'utente di capire dove si trova e i link di colore rosso chiaro indicano le pagine già visitate.
+\subsection{Tabindex}
+Ad ogni pressione del tasto tab il focus si sposta sul link direttamente successivo per agevolare la navigazione. Sono stati ridefiniti gli attributi \textit{tabindex} dei link in modo da rispecchiare l'ordine desiderato.
+\subsection{Screen reader}
+Ogni foto di contenuto è stata arricchita di attributi alt contenenti una descrizione esaustiva dell'immagine.
+Ogni campo dei form è stato corredato con un'etichetta \textit{label}.
+\subsection{Colori}
+I colori scelti per il sito hanno un contrasto abbastanza elevato per facilitare la lettura dei contenuti alle persone che soffrono di disturbi visivi come il daltonismo.
+Il sito è sviluppato in bianco, grigio e nero, con elementi di navigazione evidenziati in rosso.
+Per evitare di confondere gli utenti, i link nel menù di navigazione vengono rappresentati di colore diverso a seconda che siano stati visitati (rosso chiaro) o meno (bianco). Altri link presenti all'interno del sito, invece, sono sottolineati.
+Nel menù di navigazione lo sfondo rosso indica la pagina aperta e i link alle altre pagine si notano al passaggio del mouse cambiando il colore della casella da grigio a nero.
+Per essere sicuri di aver scelto dei colori che non creino problemi o confusione, è stata testata la homepage utilizzando il servizio offerto dal sito \underline{\color{Blue}http://www.color-blindness.com}.
+Questo sito permette, infatti, di visualizzare la pagina come se fosse una persona con determinati disturbi visivi a farlo.
+Di seguito sono riportati alcuni test eseguiti sulla pagina della prenotazione camere:
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[c]{.40\textwidth}
+		%\centering\setlength{\captionmargin}{0pt}%
+		\includegraphics[width=.70\textwidth]{../templates/_Immagini/normal.png}
+		\caption{vista normale}
+	\end{minipage}%
+	\hspace{10mm}%
+	\begin{minipage}[c]{.40\textwidth}
+		%\centering\setlength{\captionmargin}{0pt}%
+		\includegraphics[width=.70\textwidth]{../templates/_Immagini/pranatopia.png}
+		\caption{vista da un affetto da pranatopia}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[c]{.40\textwidth}
+		%\centering\setlength{\captionmargin}{0pt}%
+		\includegraphics[width=.70\textwidth]{../templates/_Immagini/deut.png}
+		\caption{vista da un affetto da deutanotopia}
+	\end{minipage}%
+	\hspace{10mm}%
+	\begin{minipage}[c]{.40\textwidth}
+		%\centering\setlength{\captionmargin}{0pt}%
+		\includegraphics[width=.70\textwidth]{../templates/_Immagini/trita.png}
+		\caption{vista da un affetto da tritanotopia}
+	\end{minipage}
+\end{figure}
+
+
+

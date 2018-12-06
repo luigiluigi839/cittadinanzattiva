@@ -1,0 +1,642 @@
+@font-face {
+    font-family: Raleway;
+    src: url("../../font/Raleway-Regular.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+
+p, ul, span {
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* #booking-box img{
+    display: block;
+    width: 100%;
+    float: left;
+    opacity: 0.7;
+} */
+
+a:link, a:visited {
+  color: black;
+}
+#breadcrumb {
+  display: none;
+}
+#booking-box {
+    background-image: url("../../img/home-img.jpeg");
+    background-size: cover;
+    width: auto;
+    padding-bottom: 10em;
+    padding-left: 4em;
+    padding-top: 6em;
+}
+
+#booking-form {
+    padding: 2em;
+    background-color: white;
+    width: 280px;
+}
+#booking-form button, .summary-button {
+    margin-top: 1.6em;
+    padding: 0.5em;
+    font-size: 1.2em;
+    width: 100%;
+    color: white;
+    border: none;
+    background-color: #f44336;
+}
+#booking-form button:hover, #login-btn:hover, .summary-button:hover {
+    cursor: pointer;
+    background-color: #ba342b;
+}
+
+.summary-button {
+  margin-top:0;
+  margin-bottom: 2em;
+}
+
+/* --------camere--------*/
+
+.booking-button-camera {
+  text-decoration: none;
+  /*margin-top: 2.8em;*/
+  padding: 1em 2.8em;
+  font-size: 1.3em;
+  border: none;
+  background-color: #f44336;
+}
+.booking-button-camera:hover {
+    background-color: #ba342b;
+}
+
+.booking-button-camera:visited, .booking-button-camera:link {
+  color:white;
+}
+
+.costo{
+  display: block;
+  padding-bottom: 1em;
+}
+.posti img{
+  width: 18px;
+  height: 18px;
+  padding-right: 0.5em;
+  padding-left: 1em;
+}
+
+.posti{
+    float: left;
+    font-size: 1.4em;
+    text-align: center;
+    width: 50%;
+}
+
+.booking-button-camera-container {
+  float: right;
+  width: 50%;
+}
+
+#booking-form label {
+    display: inline-block;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+#booking-form input, #login-form input{
+  box-sizing: border-box;
+  padding: 0.5em;
+  font-size: 1.2em;
+  width: 100%;
+}
+#booking-button, #topScrollButton, #booking-submit-button {
+    text-decoration: none;
+    float: right;
+    margin-top: 0.5em;
+    margin-right: 2em;
+    padding: 1em 1.6em;
+    font-size: 1.4em;
+    color: white;
+    background-color: #f44336;
+}
+#booking-button:hover, #topScrollButton:hover {
+    background-color: #ba342b;
+}
+
+.booking-button-container {
+  float: right;
+  padding-right: 2em;
+}
+
+.booking-button-container #booking-button {
+  margin-right: 0;
+}
+
+#booking-submit-button {
+  border-style: none;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#booking-submit-button:hover, #booking-form-button:hover {
+  background-color: #ba342b;
+  cursor: pointer;
+}
+
+#topScrollButton {
+  cursor: pointer;
+  display:none;
+  position:fixed;
+  margin: 0;
+  bottom: 2em;
+  right: 2em;
+  text-transform: uppercase;
+  z-index: 99;
+}
+
+#content-box {
+    display: block;
+}
+.inner {
+    margin: auto;
+    max-width: 1268px;
+}
+.tile {
+    overflow: auto;
+    padding-top: 3em;
+}
+
+.tile h2 {
+	font-size: 2em;
+    text-align: center;
+    padding-bottom: 1em;
+}
+.tile h3 {
+    text-align: center;
+}
+
+.tile  p{
+    padding-bottom: 3em;
+}
+
+.tile-room {
+  padding-bottom: 3em;
+}
+
+
+.tile-room .leftbox {
+  padding: 0;
+}
+
+.tile-room .leftbox img {
+  position: relative;
+}
+
+.map iframe{
+    width: 100%;
+    height: 25em;
+    border:none;
+    padding-bottom: 2em;
+
+}
+.column {
+    width: 30%;
+    padding-left: 1%;
+    padding-right: 1%;
+    float: left;
+}
+
+.column-sm {
+    width: 20%;
+    float: left;
+}
+.offset-left {
+    margin-left: 18%;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+.BG-gray {
+    background-color: #f1f1f1;
+}
+
+.BG-dark {
+    background-color: #333;
+}
+#header {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    float: left;
+    width: 100%;
+}
+#header h1 {
+    font-size: 3em;
+}
+#home-link {
+  text-decoration: none;
+  display:block;
+}
+
+#info-box {
+  width: 70%;
+}
+
+.home-link {
+  float: left;
+}
+
+.home-link .img-container,
+.home-link .info-container {
+  float: left;
+}
+
+#info_box h2 {
+    padding-top: 0.5em;
+}
+
+h3{
+    padding-bottom: 1.5em;
+}
+#service-icons img {
+    width: 20%;
+    padding-bottom: 1.3em;
+}
+
+#logo {
+    float: left;
+    width: 10em;
+    height: 6em;
+    padding-right: 1em;
+}
+
+#navbar, #mobilenavbar {
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    clear: left;
+
+}
+#navbar ul, #mobilenavbar ul {
+    overflow: hidden;
+    list-style-type: none;
+}
+#navbar ul li , #mobilenavbar ul li{
+    float: left;
+}
+#navbar li a, #mobilenavbar li a{
+    font-size: 1.3em;
+    display: block;
+    padding: 0.9em 1.6em;
+    color: white;
+    text-decoration: none;
+}
+#navbar li a:visited {
+  color: #f08080;
+}
+
+#naventry-menu {
+  display:none;
+}
+
+#naventry-prenota {
+  display:none;
+}
+
+#mobilenavbar {
+  display:none;
+}
+
+.not-active:hover {
+    background-color: black;
+}
+.active {
+    background-color: #f44336;
+}
+
+/*stile per la pagina dintorni.html*/
+#InternalNav {
+	text-align: center;
+}
+
+#InternalNav ul {
+	font-size: 2em;
+	list-style: none;
+}
+
+#InternalNav a {
+  display: block;
+  padding: 1em;
+}
+
+#InternalNav a:link, #InternalNav a:visited {
+	text-decoration: none;
+}
+
+#InternalNav a:hover {
+	text-decoration: underline;
+}
+
+.section_title {
+	text-align: center;
+	font-size: 1.5em;
+	margin-bottom: 3em;
+}
+
+#Cosa_visitare {
+  margin-top: 3em;
+}
+
+.section_title h2 {
+	font-size: 2em;
+}
+
+.section_title img {
+  height: 15em;
+}
+
+.leftbox {
+  padding-top:33%;
+	float:left;
+  width: 45%;
+  position:relative;
+}
+
+.leftbox img {
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+.rightbox {
+  margin-left: 50%;
+	width: 50%;
+}
+
+.rightbox ul {
+	list-style: none;
+}
+
+.rightbox h3 {
+	font-size: 1.5em;
+	margin-left: 0em;
+	padding-bottom: 2.5em;
+}
+
+.rightbox p {
+	margin-top: 1em;
+}
+
+.rightbox a {
+  float:right;
+}
+
+.rightbox ul a, .rightbox p a {
+  float:none;
+}
+
+/* Stile per la pagina servizi.html */
+
+.infobox h3 {
+  margin-left: 2em;
+	text-align: left;
+}
+
+.infobox ul {
+  border-top: 1px solid #DDD;
+	line-height: 150%;
+  margin-left: 1em;
+  margin-bottom: 2em;
+  list-style: none;
+}
+
+.infobox li {
+  border-bottom: 1px solid #DDD;
+  padding: 0.1em 0em 0.1em;
+}
+
+.infobox img {
+  float: left;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+/*Stile per la pagina contatti.html*/
+
+.contactbox {
+  width: 45%;
+  float: left;
+  margin: 1%;
+  text-align: center;
+  border: 1px solid #DDD;
+  margin-bottom: 4em;
+}
+
+.contactbox h3 {
+  font-size: 1.5em;
+  padding-bottom: 1em;
+}
+
+.contactbox span {
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+#tel-link {
+  cursor: default;
+}
+
+#mail-link span {
+  text-decoration: underline;
+}
+
+.contactbox img {
+  height: 12em;
+}
+
+#phone-img {
+  height: 10em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+/*stile per la pagina prenota*/
+#prenotation-box input {
+  font-size: 1.2em;
+  padding: 0.4em;
+  width: 90%;
+  margin-bottom: 1em;
+}
+
+#input-name {
+  margin-top: 1em;
+}
+
+.select-box {
+  text-align: center;
+}
+
+.select-box select {
+  padding: 0.2em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  font-size: 1.2em;
+}
+
+#note-box {
+  width: 50%;
+  margin-bottom: 3em;
+}
+
+#note-box h3 {
+  text-align: left;
+  padding-left: 7em;
+  font-size: 1.3em;
+}
+
+#note-box ul {
+  list-style: none;
+  line-height: 1.5em;
+}
+
+#note-box li {
+  margin-top: 0.2em;
+}
+
+.error {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  border: 2px solid red;
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+.error li {
+  padding:0.3em;
+}
+
+#topScrollButton {
+  font-size: 1em;
+}
+
+#footer {
+    padding-bottom: 7em;
+    background-color: black;
+    text-align: center;
+}
+#footer p {
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    color: #777;
+}
+#footer a {
+    color: #494949;
+}
+#social-footer {
+    padding: 0.5em;
+    background-color: #333;
+}
+#social-footer img {
+    padding: 0.1em 1.5em 0.3em;
+    width: 3em;
+}
+#tab-prenotazioni {
+    text-align: center;
+    margin-left: 17%;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+}
+#tab-prenotazioni th {
+    background-color: #f1f1f1;
+    padding: 1em;
+
+}
+#tab-prenotazioni td {
+    padding: 0.4em;
+    border-bottom: 1px solid #ddd;
+}
+#prenota-m {
+  display:none;
+}
+#login-form {
+    text-align: center;
+    width: 98%;
+    margin-bottom: 2em;
+}
+
+#login-form input{
+    width: 30%;
+    margin-bottom: 1em;
+}
+
+#login-btn {
+    text-decoration: none;
+    margin-top: 1em;
+    padding: 0.8em 2em;
+    font-size: 1.4em;
+    width: 30%;
+    color: white;
+    background-color: #f44336;
+    border: none;
+}
+
+.summary {
+  margin-bottom: 3em;
+}
+
+.summary ul {
+  list-style: none;
+}
+
+.summary ul li {
+  padding:0.3em;
+}
+
+#summary-cash {
+  display: block;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.booking-info {
+  width: 100%;
+}
+
+
+
+@media screen and (max-width:1000px) {
+  .posti {
+      text-align: center;
+      margin:auto;
+  }
+
+  .rightbox a {
+    margin-top: 0em;
+    display: block;
+    float: none;
+    text-align: center;
+  }
+}
+
+.val_error{
+  display: block;
+  color: red;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+\section{Comportamento} 
+\subsection{PHP}
+Il PHP in questo sito è stato utilizzato per permettere la manipolazione e la visualizzazione dei dati presenti nel database. Principalmente si può dividere in due categorie:
+\begin{itemize}
+	\item [1]. Funzioni che generano le pagine visualizzate dai visitatori;
+	\item [2]. Funzioni che permettono agli utenti e amministratori di modificare i dati presenti.
+\end{itemize}
+La prima categoria si occupa di generare dinamicamente le pagine, prendendo e manipolando i file .html all'interno di \textit{/contents}. Questo approccio è stato scelto per rendere il sito modulare, ad esempio per dare la possibilità di apportare cambiamenti su più pagine con un'unica modifica.
+Nella seconda categoria abbiamo racchiuso sia le funzioni destinate all'utente (per prenotare la stanza), sia quella dedicata esclusivamente agli amministratori ovvero la visualizzazione e l'eventuale annullamento delle prenotazioni. Le funzioni amministrative sono inserite nel file cp\_admin.php, mentre quelle che riguardano gli utenti che devono prenotare una stanza nel file prenota.php.
+\subsubsection{Creazione dinamica pagine}
+Ogni pagina PHP richiama funzioni presenti in \textit{/php/functions.php} per definire gli elementi principali che ogni pagina deve avere:
+\begin{itemize}
+\item[-] \textbf{title}: viene sostituito con il corrispondente titolo prima della generazione della pagina;
+\item[-] \textbf{header}: codice uguale per ogni pagina;
+\item[-] \textbf{navbar}: richiama una funzione che creerà il menù in base alla pagina corrente selezionata;
+\item[-] \textbf{mobilenavbar}: genera il menù per il mobile per ogni pagina;
+\item[-] \textbf{breadcrumb}: generato ma nascosto nelle pagine e utilizzato solo nel css di stampa;
+\item[-] \textbf{content}: genera il contenuto prelevandolo dallo specifico file html presente in \textit{/contents};
+\item[-] \textbf{footer}: codice uguale per ogni pagina.
+\end{itemize}
+\subsection{JavaScript}
+Per risolvere le criticità dovute all'inserimento dei dati in input nei form della prenotazione delle camere, è stata presa in considerazione la tecnologia JavaScript: volevamo rendere la validazione dei form e la segnalazione di eventuali errori immediata, per consentire all'utente di risolvere tutte le sue esigenze di iterazione in maniera rapida e per evitare di sovraccaricare il server con troppi controlli in PHP.
+Sono stati creati i file .js che contengono le funzioni JavaScript per la validazione dei form presenti sul sito, prima di inviare la richiesta al server MySQL. La validazione tramite Javascript viene eseguita nei seguenti form: Login e Prenotazione. Ogni volta che uno di questi form viene compilato e i suoi dati inviati, viene generato l'evento onsubmit che ritorna il valore della corrispondente funzione di valutazione Javascript; se questo valore è "false" significa che sono stati rilevati uno o più errori, che vengono visualizzati nell'apposita area, in questo caso l'invio al server è abortito. Nel caso contrario la funzione ritorna true e quindi il form viene inviato al server.
+Nello specifico il file controlli.js, che contiene la funzione che valida il form login Amministratore, controlla che la username inserita sia conforme e che la password sia stata effettivamente inserita. Contiene inoltre tutte le funzioni per validare il form di prenotazione delle camere.

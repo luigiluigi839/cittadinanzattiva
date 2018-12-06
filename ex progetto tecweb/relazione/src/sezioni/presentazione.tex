@@ -1,0 +1,9 @@
+\section{Presentazione}
+La presentazione è stata fatta in CSS3 tenendo completamente separata la struttura attraverso quattro file esterni: tre per gestire la visualizzazione in un qualsiasi schermo di dimensioni diverse e un altro per gestire la stampa. Il sito è stato costruito in maniera \textit{responsive}.
+\subsection{style.css}
+Questo foglio raccoglie tutte le regole di stile utilizzate per la corretta presentazione di ogni elemento delle pagine web del sito per tutti gli schermi di grandezza superiore a 992px. Sono stati sviluppati gerarchicamente quanti più elementi possibili in modo da non dover ripetere regole di stile comuni per i discendenti. In questo file è presente una media query con il break-point fissato a 1000px, che permette lo spostamento del bottone Prenota nella pagina \textit{Le nostre camere} in presenza di una schermo di dimensioni più ridotte.
+\subsection{style-mobile.css e style-tablet.css}
+Questi due fogli vengono richiamati in caso di presenza di schermi di grandezza inferiore a 992px per quanto riguarda \textit{style-tablet.css} e inferiore a 768px per \textit{style-mobile.css}.\\ 
+Le uniche differenze da apportare in una versione mobile o tablet sono i cambiamenti di posizione di intere strutture o la loro eliminazione.
+\subsection{printS.css}
+Questo foglio di stile si applica automaticamente quando un utente vuole stampare la pagina. Sono stati tolti tutti gli elementi visivi non strettamente necessari, quindi tutti i colori e le immagini di background o di presentazione; abbiamo mantenuto solo il form di prenotazione della pagina \textit{Prenota} in quanto, magari, l'utente potrebbe essere interessato ad avere una copia cartacea dei dati che ci fornisce. Abbiamo rimosso anche il menù di navigazione e il logo presenti nell'header.

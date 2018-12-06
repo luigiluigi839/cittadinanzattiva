@@ -1,0 +1,53 @@
+<script  src="contents/javascript/controlli.js"></script>
+	<span id="errore_checkIn" class="val_error"></span>
+	<span id="errore_checkOut" class="val_error"></span>
+	<span id="errore_nomeCognome" class="val_error"></span>
+	<span id="errore_email" class="val_error"></span>
+<div class="tile">
+	<div class="inner">
+		<h2>PRENOTA</h2>
+			{errori}
+	</div>
+</div>
+<form action="./prenota.php" onsubmit="return valida()" method="POST">
+<div class="tile BG-gray" id="prenota-title">
+<div class="inner" id="prenotation-box">
+		
+			<div class="column">
+				<h3> Quanto vorresti soggiornare qui? </h3>
+				<label for="check-in">Check-In</label><br>
+				<input type="text" name="check-in" id="check-in" placeholder="GG-MM-AAAA" tabindex="8" {check-in}/><br>
+				<label for="check-out">Check-Out</label><br>
+				<input type="text" name="check-out" id="check-out" placeholder="GG-MM-AAAA" tabindex="9" {check-out}/><br>
+			</div>
+			<div class="column select-box">
+				<h3> Che stanza vuoi? </h3>
+				<label for="TipoStanza">Tipologia</label><br>
+				{select-stanza}
+			</div>
+			<div class="column">
+				<h3> A che nome vuoi prenotare? </h3>
+				<label for="input-name">Nome Cognome</label><br>
+				<input type="text" name="guest-name" placeholder="Nome Cognome" id="input-name" tabindex="11" {guest-name}/> <br>
+				<label for="guest-mail">E-mail</label><br>
+				<input type="text" name="guest-mail" placeholder="E-mail" id="guest-mail" tabindex="12" {guest-mail}/> <br>
+			</div>
+</div>
+</div>
+<div class="tile">
+	<div class="inner">
+		<div class="column" id="note-box">
+			<h3> NOTE: </h3>
+			<ul>
+				<li> <strong>PAGAMENTO</strong>: Il pagamento verr&agrave; effettuato al momento del check out </li>
+				<li lang="en"> <strong>CHECK IN</strong>: disponibile dopo le 12:00am </li>
+				<li lang="en"> <strong>CHECK OUT</strong>: si chiede di lasciare la stanza entro 10:00am </li>
+				<li> <strong>INFO</strong>: per chiarimenti o esigenze particolari, contattateci a <a href="contatti.php#contatti-title"> questa pagina </a> </li>
+			</ul>
+		</div>
+		<button type="submit" name="prenota" value="prenota" id="booking-submit-button" tabindex="13">INVIA LA PRENOTAZIONE</button>
+	</div>
+</div>
+</form>
+
+

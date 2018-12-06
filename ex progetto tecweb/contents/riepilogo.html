@@ -1,0 +1,36 @@
+<div class="tile">
+	<div class="content-box">
+	<div class="inner">
+		<h2>RIEPILOGO PRENOTAZIONE</h2>
+	</div>
+</div>
+<div class="tile BG-gray">
+	<div class="inner summary">
+		<div class="column offset-left">
+			<ul>
+				<li><strong>DA:</strong> {check-in}</li>
+				<li><strong>A:</strong> {check-out}</li>
+			</ul>
+		</div>
+		<div class="column">
+		<ul>
+			<li><strong>CAMERA SCELTA:</strong> {TipoStanza}</li>
+			<li><strong>NOME CLIENTE:</strong> {guest-name}</li>
+			<li lang="en"><strong>EMAIL:</strong> {guest-mail}</li>
+		</ul>
+		</div>
+	</div>
+</div>
+<div class="tile">
+	<div class="inner">
+		<div class="column offset-left">
+			<span id="summary-cash"><strong>COSTO PRENOTAZIONE:</strong> {costo}&euro;</span>
+		</div>
+			<form class="column" method="POST">
+				<button class="summary-button" type="submit" name="conferma" value="conferma">CONFERMA PRENOTAZIONE</button>
+				<button class="summary-button" type="submit" name="cancella" value="cancella">CANCELLA PRENOTAZIONE</button>
+			</form>
+
+	</div>
+</div>
+</div>
