@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="it" xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>CittadinzAttiva: Registrati</title>
+		<meta name="title" content="CittadinzAttiva" />
+		<meta name="description" content="Home Page di CittadinzAttiva" />
+		<meta name="keywords" content="comuni, cittadini, attiva" />
+		<meta name="language" content="italian it" />
+		<meta name="author" content="Elia" />
+		<link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../stylesheet/style.css" />
+	</head>
+	<body>
+		<div class="core">
+			<div class="header">
+				<?php 
+					require_once 'includes\header.php';
+					head('signup');
+				?>
+			</div>
+			<div class="nav">
+				<?php 
+					require_once 'includes\nav.php';
+					nav('signup'); 
+				?>
+			</div>
+			<div id="register">
+				<form class="form" method="post" action="php/submit.php" >
+					<fieldset id="personal_info">
+						<legend>Informazioni Personali</legend>
+						<!--Nome-->
+						<label for="name">Nome</label>
+						<input type="text" id="name" name="nome" placeholder="Mario" maxlength="20" required />
+						<!--Cognome-->
+						<label for="surname">Cognome</label>
+						<input type="text" id="surname" name="cognome" placeholder="Rossi" maxlength="30" required />
+						<!--Data di nascita-->
+						<label for="date" id="data_nascita">Data di Nascita</label>
+						<input type="date" id="date" name="bdata" required>
+					</fieldset>
+					<fieldset id="residenza">
+						<legend>Residenza</legend>
+						<!--Via-->
+						<label for="via" id="label_via">Indirizzo</label>
+						<input type="text" id="via" name="via" placeholder="Viale Venezia" required />
+						<!--Civico-->
+						<label for="civico">Civico</label>
+						<input type="text" id="civico" name="civico" placeholder="23" required />
+						<!--Residenza-->
+						<label for="paese" id="label_paese">Comune di residenza</label>
+						<!--Comune-->
+						<input type="text" id="paese" name="paese" placeholder="Paese" required />
+						<!--Provincia-->
+						<label for="provincia" id="prov">Provincia</label>
+						<input type="text" id="provincia" name="provincia" placeholder="TV" required />
+					</fieldset>
+					<fieldset id="contact">
+						<legend>Contatti</legend>
+						<!--Telefono-->
+						<label for="num_tel">Telefono</label>
+						<input type="text" id="num_tel" name="numero_telefono" placeholder="042-3472058" class="phone_number" maxlength="11"  />
+						<!--Cellulare-->
+						<label for="num_cell">Cellulare</label>
+						<input type="text" id="num_cell" name="numero_cellulare" placeholder="333-7392755" class="phone_number" maxlength="11" required />
+						<!--Email-->
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="mario.rossi@mail.com" maxlength="30" required />
+					</fieldset>
+					<fieldset id="submit">
+						<input type="submit">
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
