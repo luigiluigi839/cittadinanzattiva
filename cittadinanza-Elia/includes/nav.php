@@ -5,15 +5,15 @@
 			echo '<p id="breadcrumb">Ti trovi in: Home</p>';
 			echo "\r\n\t\t\t\t";
 			echo '<ul>
-					<li id="activeLink">Home</li>
+					<li id="activeLink" tabindex="3">Home</li>
 					<li>
-						<a href="../service.php">Servizi</a>
+						<a href="../service.php" tabindex="4">Servizi</a>
 					</li>
 					<li>
-						<a href="../news.php">News</a>
+						<a href="../news.php" tabindex="5">News</a>
 					</li>
 					<li>
-						<a href="../contatti.php">Contatti</a>
+						<a href="../contatti.php" tabindex="6">Contatti</a>
 					</li>
 				</ul>';
 			echo "\r\n";
@@ -24,14 +24,14 @@
 			echo "\r\n\t\t\t\t";
 			echo '<ul>
 					<li>
-						<a href="../index.php">Home</a>
+						<a href="../index.php" tabindex="4">Home</a>
 					</li>
-					<li id="activelink">Servizi</li>
+					<li id="activelink" tabindex="5">Servizi</li>
 					<li>
-						<a href="../news.php">News</a>
+						<a href="../news.php" tabindex="6">News</a>
 					</li>
 					<li>
-						<a href="../contatti.php">Contatti</a>
+						<a href="../contatti.php" tabindex="7">Contatti</a>
 					</li>
 				</ul>';
 			echo "\r\n";
@@ -42,14 +42,14 @@
 			echo "\r\n\t\t\t\t";
 			echo '<ul>
 					<li>
-						<a href="../index.php">Home</a>
+						<a href="../index.php" tabindex="4">Home</a>
 					</li>
 					<li>
-						<a href="../service.php">Servizi</a>
+						<a href="../service.php" tabindex="5">Servizi</a>
 					</li>
-					<li id="activeLink">News</li>
+					<li id="activeLink" tabindex="6">News</li>
 					<li>
-						<a href="../contatti.php">Contatti</a>
+						<a href="../contatti.php" tabindex="7">Contatti</a>
 					</li>
 				</ul>';
 			echo "\r\n";
@@ -77,17 +77,37 @@
 			echo "\r\n\t\t\t\t";
 			echo '<ul>
 					<li>
-						<a href="../index.php">Home</a>
+						<a href="../index.php" tabindex="4">Home</a>
 					</li>
-					<li id="activeLink">Registrati</li>
+					<li id="activeLink" tabindex="5">Registrati</li>
 					<li>
-						<a href="../service.php">Servizi</a>
-					</li>
-					<li>
-						<a href="../news.php">News</a>
+						<a href="../service.php" tabindex="6">Servizi</a>
 					</li>
 					<li>
-						<a href="../contatti.php">Contatti</a>
+						<a href="../news.php" tabindex="7">News</a>
+					</li>
+					<li>
+						<a href="../contatti.php" tabindex="8">Contatti</a>
+					</li>
+				</ul>';
+			echo "\r\n";
+		}
+		if ($page == 'welcome'){
+			$page = 'Benvenuto';
+			echo '<p id="breadcrumb">Ti trovi in: Home &gt; ' . "$page" . '</p>';
+			echo "\r\n\t\t\t\t";
+			echo '<ul>
+					<li>
+						<a href="../index.php" tabindex="4">Home</a>
+					</li>
+					<li>
+						<a href="../service.php" tabindex="6">Servizi</a>
+					</li>
+					<li>
+						<a href="../news.php" tabindex="7">News</a>
+					</li>
+					<li>
+						<a href="../contatti.php" tabindex="8">Contatti</a>
 					</li>
 				</ul>';
 			echo "\r\n";
