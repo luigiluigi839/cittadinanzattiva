@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>CittadinzAttiva: Registrati</title>
+		<meta name="title" content="CittadinzAttiva" />
+		<meta name="description" content="Registrati al servizio" />
+		<meta name="keywords" content="comuni, cittadini, attiva, registrati" />
+		<meta name="language" content="italian it" />
+		<meta name="author" content="Elia" />
+		<link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+		<link href="../stylesheet/style.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="../stylesheet/print.css" rel="stylesheet" type="text/css" media="print" />
+	</head>
+	<body>
+		<div class="core">
+			<div class="header">
+				<?php 
+					require_once 'header.php';
+					head('signup');
+				?>
+			</div>
+			<div class="nav">
+				<?php 
+					require_once 'nav.php';
+					nav('signup'); 
+				?>
+			</div>
+			<div id="register">
+				<form class="form" method="post" action="php/submit.php">
+					<fieldset>
+						<legend>Account</legend>
+						<label for="username">Username</label>
+						<input type="text" id="username" name="username" placeholder="User" maxlength="16" required />
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" placeholder="Password" maxlength="16" required />
+						<label for="repeat_password">Conferma Password</label>
+						<input type="password" id="repeat_password" name="conferma_password" placeholder="Ripeti Password" maxlength="16" required />
+					</fieldset>
+					<fieldset id="personal_info">
+						<legend>Informazioni Personali</legend>
+						<!--Nome-->
+						<label for="name">Nome</label>
+						<input type="text" id="name" name="nome" placeholder="Mario" maxlength="20" required />
+						<!--Cognome-->
+						<label for="surname">Cognome</label>
+						<input type="text" id="surname" name="cognome" placeholder="Rossi" maxlength="30" required />
+						<!--Data di nascita-->
+						<label for="date" id="data_nascita">Data di Nascita</label>
+						<input type="date" id="date" name="bdata" required>
+					</fieldset>
+					<fieldset id="residenza">
+						<legend>Residenza</legend>
+						<!--Via-->
+						<label for="via" id="label_via">Indirizzo</label>
+						<input type="text" id="via" name="via" placeholder="Viale Venezia" maxlength="30" required />
+						<!--Civico-->
+						<label for="civico">Civico</label>
+						<input type="text" id="civico" name="civico" placeholder="23" maxlength="3" required />
+						<!--Residenza-->
+						<label for="paese" id="label_paese">Comune di residenza</label>
+						<!--Comune-->
+						<input type="text" id="paese" name="paese" placeholder="Paese" maxlength="30" required />
+						<!--Provincia-->
+						<label for="provincia" id="prov">Provincia</label>
+						<input type="text" id="provincia" name="provincia" placeholder="TV" maxlength="2" required />
+					</fieldset>
+					<fieldset id="contact">
+						<legend>Contatti</legend>
+						<!--Telefono-->
+						<label for="num_tel">Telefono</label>
+						<input type="text" id="num_tel" name="numero_telefono" placeholder="042-3472058" class="phone_number" maxlength="11"  />
+						<!--Cellulare-->
+						<label for="num_cell">Cellulare</label>
+						<input type="text" id="num_cell" name="numero_cellulare" placeholder="333-7392755" class="phone_number" maxlength="11" required />
+						<!--Email-->
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="mario.rossi@mail.com" maxlength="30" required />
+					</fieldset>
+					<fieldset id="submit">
+						<input type="submit" value="Registrati">
+					</fieldset>
+				</form>
+			</div>
+			<div id="validate">
+				<img src="../img/W3C_HTML5_certified.gif" id="html5-valid" alt="HTML5 Valido!" />
+				<img src="../img/vcss-blue.gif" id="css-valid" alt="CSS Valido!" />
+			</div>
+		</div>
+	</body>
+</html>
