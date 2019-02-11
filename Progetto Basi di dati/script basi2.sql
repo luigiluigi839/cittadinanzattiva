@@ -7,184 +7,9 @@ USE Progetto;
 SET FOREIGN_KEY_CHECKS = 0;
 
 
-
-CREATE TABLE IF NOT EXISTS  Utente_Amministratore (
-    ID INT(11) AUTO_INCREMENT,
-    Nome VARCHAR(50) NOT NULL,
-    Cognome VARCHAR(50) NOT NULL,
-    Email VARCHAR(50) NOT NULL,
-    Username VARCHAR(15) NOT NULL,
-    Password VARCHAR(20) NOT NULL,
-    Telefono_Interno INT(14) NOT NULL,
-    PRIMARY KEY(ID)
-    ) ENGINE=INNODB;
-
-    INSERT INTO Utente_Amministratore (Nome, Cognome, Email, Username, Password, Telefono_Interno) VALUES
-    ('Anna','Rossi','annarossi@gmail.com','aaaa','aaaa',0423494847),
-    ('Mario','Verdi','marioverdi@gmail.com','bbbb','bbbb',0423454746),
-    ('Gianni','Grigio','giannigrigio@gmail.com','cccc','cccc',0425679876),
-    ('Francesca','Blu','francescablu@gmail.com','eeee','eeee',0422345678);
-
-
-CREATE TABLE IF NOT EXISTS  Utente_base (
-    ID INT(11) AUTO_INCREMENT,
-    Nome VARCHAR(50) NOT NULL,
-    Cognome VARCHAR(50) NOT NULL,
-    Email VARCHAR(50) NOT NULL,
-    Username VARCHAR(15) NOT NULL,
-    Password VARCHAR(20) NOT NULL,
-    Cellulare INT(14) NOT NULL,
-    Data_nascita DATE NOT NULL,
-    Codice_Fiscale VARCHAR(16) NOT NULL,
-    PRIMARY KEY(ID)
-    ) ENGINE=INNODB;
-
-    INSERT INTO Utente_Base (Nome, Cognome, Email, Username, Password, Cellulare, Data_Nascita, Codice_Fiscale) VALUES
-    ('Sara','Bianchi','sarabianchi@gmail.com','jjjj','aaaa',3451234786,'1976-12-08','SRBNCH76C12F330L'),
-    ('Aimone','Cataldo','aimonecataldo@gmail.com','ffff','bbbb',3287856443,'1906-11-04','CTLMNA06D11H501R'),
-    ('Ferruccio','Tosi','ferrucciotosi@hotmail.it','gggg','cccc',3256787342,'1908-30-10','TSOFRC08R30F839X'),
-    ('Prospero','Puddu','prosperopuddu@live.com','zzzz','zzzz',3568754112,'1910-28-03','PDDPSP10C28D612B');
-
-
-CREATE TABLE IF NOT EXISTS  Segnalazione (
-    Numero INT(11) AUTO_INCREMENT,
-    Dataregistrazione timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    Tipo_S VARCHAR(20) NOT NULL,
-    Descrizione VARCHAR(600),
-    Rating INT(11),
-    Stato VARCHAR(20),
-    Risposta VARCHAR(600),
-    PRIMARY KEY(Numero)
-    ) ENGINE=INNODB;
-
-
-INSERT INTO Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta) VALUES
-('DISFUNSIONE','ce un lampione non funzionante',1,'in lavorazione',NULL),
-('SUGGERIMENTO','Sarebbe bello avere una rotonda al posto del semaforo',1,NULL,NULL);
-
-
-
-CREATE TABLE IF NOT EXISTS Tipologia (
-    ID VARCHAR(10) PRIMARY KEY, 
-    Nome VARCHAR(50) NOT NULL, 
-    Descrizione VARCHAR(200)
-    ) ENGINE=INNODB;
-
-
-INSERT INTO Tipologia (ID, Nome, Descrizione) VALUES
-('REC001','Animali','tutto sugli animali'),
-('DIS001','Automobili abbandonati',NULL),
-('SUG001','Barriere architettoniche',NULL),
-('DIS002','Buche/strade dissestate',NULL),
-('REC002','Contenitori rifiuti',NULL),
-('REC003','Furti/microcriminalita',NULL),
-('REC004','Graffiti',NULL),
-('REC005','Immigrati/nomadi',NULL),
-('REC006','Inquinamento',NULL),
-('DIS003','Illuminazione pubblica',NULL),
-('REC007','Abusivismo/Occupazione',NULL),
-('DIS004','Parcheggi/Divieti di sosta',NULL),
-('DIS005','Rifiuti',NULL),
-('DIS006','Segnaletica Stradale / Semafori',NULL),
-('REC008','Situazioni di Degrado Sociale',NULL),
-('DIS007','Verde Pubblico',NULL);
-
-
-
-CREATE TABLE IF NOT EXISTS Reparto (
-    ID VARCHAR(15) PRIMARY KEY, 
-    Nome VARCHAR(50) NOT NULL, 
-    Descrizione VARCHAR(200) DEFAULT NULL
-    ) ENGINE=INNODB;
-
-INSERT INTO Reparto (ID, Nome) VALUES
-('Uff001', 'Ambiente'),
-('Uff002', 'Appalti'), 
-('Uff003', 'Attività Produttive'), 
-('Uff004', 'Biblioteca'), 
-('Uff005', 'Corpo Polizia Locale'), 
-('Uff006', 'Edilizia Privata'), 
-('Uff007', 'Gabinetto Sindaco'), 
-('Uff008', 'Manutenzioni'), 
-('Uff009', 'Opere Pubbliche'), 
-('Uff010', 'Programmazione e Controllo di Gestione'), 
-('Uff011', 'Protezione Civile'), 
-('Uff012', ' Risorse Finanziarie'), 
-('Uff013', 'Risorse Tributarie e Patrimoniali'), 
-('Uff014', 'Risorse Umane e Organizzazione'), 
-('Uff015', 'Segreteria di Consiglio e Giunta'), 
-('Uff016', 'Servizi Culturali'), 
-('Uff017','Servizio Demografici ed Elettorali'), 
-('Uff018', 'Acquedotto - Fognatura e Depurazione Acque reflue'), 
-('Uff019', 'Servizi scolastici e sportivi'), 
-('Uff020', 'Servizi Sociali'), 
-('Uff021', 'Sistemi informativi'), 
-('Uff022', 'Urbanistica');
-
-
-
-
-CREATE TABLE IF NOT EXISTS Soggetto_Competente (
-    ID VARCHAR(15) PRIMARY KEY,
-    Nome VARCHAR(50) NOT NULL,
-    Descrizione VARCHAR(200),
-    Telefono INT(14) NOT NULL,
-    Email VARCHAR(50),
-    Nome_Referente VARCHAR(50),
-    Cognome_Referente VARCHAR(50),
-    Servizio_Offerto VARCHAR(50),
-    Note VARCHAR(200),
-    P_IVA VARCHAR(11)
-    ) ENGINE=INNODB;
-
-INSERT INTO Soggetto_Competente (ID, Nome, Descrizione, Telefono, Email, Nome_Referente, Cognome_Referente, Servizio_Offerto, Note, P_IVA ) VALUES
-('VI001', 'Polizia locale',NULL,0978115544,'polizia@gmail.com','Tiziano','Bruni',NULL,NULL,NULL),
-('VI002','Vigili del fuoco',NULL,0564231154,'vigilifuoco@live.it','Jason','Born',NULL,NULL,NULL),
-('EL001','Elettrolux','elettricista',0967432133,'elettrolux@hotmail.com','Paolo','Ghione','cavetteria',NULL,'0987451187'),
-('ID001','Idroplanet','idraulico',0564896754,'idroplanet@yahoo.it','Giacomo','Sartori','idraulica',NULL,'78654320984');
-
-
-
-CREATE TABLE IF NOT EXISTS Coordinazione (
-    IDTipologia VARCHAR(10),
-    IDReparto VARCHAR(15),
-    PRIMARY KEY(IDTipologia, IDReparto),
-    FOREIGN KEY (IDTipologia)
-        REFERENCES Tipologia (ID),
-    FOREIGN KEY (IDReparto)
-        REFERENCES Reparto (ID)
-    ) ENGINE=INNODB;
-
-
-
-CREATE TABLE IF NOT EXISTS Avviso (
-    IDReparto VARCHAR(15),
-    IDsoggettoc VARCHAR(15),
-    PRIMARY KEY (IDReparto, IDsoggettoc),
-    FOREIGN KEY (IDReparto)
-        REFERENCES Reparto(ID),
-    FOREIGN KEY (IDsoggettoc)
-        REFERENCES Soggetto_Competente (ID)
-    ) ENGINE=INNODB;
-
-
-
-CREATE TABLE IF NOT EXISTS Competenza (
-    IDReparto VARCHAR(15),
-    IDAmministratore INT(11),
-    PRIMARY KEY (IDReparto, IDAmministratore),
-    FOREIGN KEY (IDReparto)
-        REFERENCES Reparto (ID),
-    FOREIGN KEY (IDAmministratore)
-        REFERENCES Utente_Amministratore (ID)
-    ) ENGINE=INNODB;
-
-
-
-
 CREATE TABLE IF NOT EXISTS Regione (
-    Cod_ISTAT INT(11) PRIMARY KEY,
-    Nome VARCHAR(10) NOT NULL
+    Cod_ISTAT INT PRIMARY KEY,
+    Nome VARCHAR(50) NOT NULL
     ) ENGINE=INNODB;
 
 INSERT INTO Regione (Cod_ISTAT, Nome) VALUES
@@ -194,9 +19,9 @@ INSERT INTO Regione (Cod_ISTAT, Nome) VALUES
 
 
 CREATE TABLE IF NOT EXISTS Provincia (
-    Cod_ISTAT INT(11),
-    Regione INT(11),
-    Nome VARCHAR(10) NOT NULL,
+    Cod_ISTAT INT,
+    Regione INT,
+    Nome VARCHAR(50) NOT NULL,
     PRIMARY KEY(Cod_ISTAT, Regione),
     FOREIGN KEY (Regione)
         REFERENCES Regione (Cod_ISTAT)
@@ -210,10 +35,10 @@ INSERT INTO Provincia (Cod_ISTAT, Regione, Nome) VALUES
 
 
 CREATE TABLE IF NOT EXISTS Comune (
-    Cod_ISTAT INT(11),
-    Provincia INT(11),
-    Nome VARCHAR(20) NOT NULL,
-    CAP INT(5) NOT NULL,
+    Cod_ISTAT INT,
+    Provincia INT,
+    Nome VARCHAR(50) NOT NULL,
+    CAP INT NOT NULL,
     PRIMARY KEY (Cod_ISTAT, Provincia),
     FOREIGN KEY (Provincia)
         REFERENCES Provincia (Cod_ISTAT)
@@ -321,58 +146,295 @@ INSERT INTO Comune (Cod_ISTAT, Provincia, Nome, CAP) VALUES
 
 CREATE TABLE IF NOT EXISTS Indirizzo (
     Via VARCHAR(50),
-    Civico SMALLINT,
-    Comune INT(11),
-    IDBase INT(11) DEFAULT NULL,
-    Segnalazione INT(11) DEFAULT NULL,
+    Civico INT,
+    Comune INT,
     PRIMARY KEY (Via, Civico, Comune),
     FOREIGN KEY (Comune)
-        REFERENCES Comune (Cod_ISTAT),
-    FOREIGN KEY(IDBase)
-        REFERENCES Utente_Base(ID) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY(Segnalazione)
-        REFERENCES Segnalazione (Numero)
+        REFERENCES Comune(Cod_ISTAT)
     ) ENGINE=INNODB;
 
 
-INSERT INTO Indirizzo (Via, Civico, Comune, IDBase, Segnalazione ) VALUES
-('via delle Acquette',1,26086,1,1),
-('via Adamello',45,26086,NULL,NULL),
-('via Adige',23,26086,NULL,NULL),
-('via Carlo Agnoletti',11,26086,NULL,NULL),
-('via F.lli Agosti',22,26086,NULL,NULL),
-('via Leon Battista Alberti',5,26086,NULL,NULL),
-('via Albona',7,26086,NULL,NULL),
-('via Aleandro',78,26086,2,2),
-('via Aleardo Aleardi',65,26086,NULL,NULL),
-('via Alfieri',3,26086,NULL,NULL),
-('via degli Alpini',8,26086,NULL,NULL),
-('via Altino',76,26086,NULL,NULL),
-('via Alzaia',8,26086,3,2),
-('via Amalfi',65,26086,NULL,NULL),
-('via Pomponio Amalteo',9,26086,NULL,NULL),
-('via G. Amendola',22,26086,NULL,NULL),
-('via Amundsen',11,26086,NULL,NULL),
-('via A. Anassilide',8,26086,NULL,NULL),
-('piazza Giannino Ancilotto',64,26086,NULL,NULL),
-('via Flaminio',7,26012,NULL,NULL),
-('via Fogazzaro',98,26012,4,2),
-('via Foiana',9,26012,NULL,NULL),
-('vicolo Fonderia',12,26012,NULL,NULL),
-('via Fonderia',1,26012,NULL,NULL),
-('vicolo Fontane A',8,26012,NULL,NULL),
-('vicolo Fontane B',9,26012,NULL,NULL),
-('strada di Fontane',89,26012,NULL,NULL),
-('via delle Fontanelle',8,26012,NULL,NULL),
-('via Forcellini',78,26089,NULL,NULL),
-('via Fornaci',76,26089,NULL,NULL),
-('via Forte Marghera',43,26089,NULL,NULL),
-('via Forzetta',3,26089,NULL,NULL),
-('via Foscari',NULL,26089,NULL,NULL),
-('via Foscarini',NULL,26089,NULL,NULL),
-('via Foscolo',NULL,26089,NULL,NULL),
-('via Fossagera',NULL,26089,NULL,NULL),
-('vicolo Fossagera',NULL,26089,NULL,NULL),
-('via Fosse Ardeatine',NULL,26089,NULL,NULL);
+INSERT INTO Indirizzo (Via, Civico, Comune) VALUES
+('via delle Acquette',1,26086),
+('via Adamello',45,26086),
+('via Adige',23,26086),
+('via Carlo Agnoletti',11,26086),
+('via F.lli Agosti',22,26086),
+('via Leon Battista Alberti',5,26086),
+('via Albona',7,26086),
+('via Aleandro',78,26086),
+('via Aleardo Aleardi',65,26086),
+('via Alfieri',3,26086),
+('via degli Alpini',8,26086),
+('via Altino',76,26086),
+('via Alzaia',8,26086),
+('via Amalfi',65,26086),
+('via Pomponio Amalteo',9,26086),
+('via G. Amendola',22,26086),
+('via Amundsen',11,26086),
+('via A. Anassilide',8,26086),
+('piazza Giannino Ancilotto',64,26086),
+('via Flaminio',7,26012),
+('via Fogazzaro',98,26012),
+('via Foiana',9,26012),
+('vicolo Fonderia',12,26012),
+('via Fonderia',1,26012),
+('vicolo Fontane A',8,26012),
+('vicolo Fontane B',9,26012),
+('strada di Fontane',89,26012),
+('via delle Fontanelle',8,26012),
+('via Forcellini',78,26089),
+('via Fornaci',76,26089),
+('via Forte Marghera',43,26089),
+('via Forzetta',3,26089),
+('via Foscari',4,26089),
+('via Foscarini',5,26089),
+('via Foscolo',9,26089),
+('via Fossagera',11,26089),
+('vicolo Fossagera',12,26089),
+('via Fosse Ardeatine',26,26089);
+
+
+CREATE TABLE IF NOT EXISTS  Utente_Amministratore (
+    ID INT AUTO_INCREMENT,
+    Nome VARCHAR(50) NOT NULL,
+    Cognome VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) NOT NULL,
+    Username VARCHAR(15) NOT NULL,
+    Password VARCHAR(20) NOT NULL,
+    Telefono_Interno BIGINT(20) NOT NULL,
+    PRIMARY KEY(ID)
+    ) ENGINE=INNODB;
+
+    INSERT INTO Utente_Amministratore (Nome, Cognome, Email, Username, Password, Telefono_Interno) VALUES
+    ('Anna','Rossi','annarossi@gmail.com','aaaa','aaaa',0423494847),
+    ('Mario','Verdi','marioverdi@gmail.com','bbbb','bbbb',0423454746),
+    ('Gianni','Grigio','giannigrigio@gmail.com','cccc','cccc',0425679876),
+    ('Francesca','Blu','francescablu@gmail.com','eeee','eeee',0422345678);
+
+
+CREATE TABLE IF NOT EXISTS  Utente_Base (
+    ID INT AUTO_INCREMENT,
+    Nome VARCHAR(50) NOT NULL,
+    Cognome VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) NOT NULL,
+    Username VARCHAR(15) NOT NULL,
+    Password VARCHAR(20) NOT NULL,
+    Cellulare BIGINT(15) NOT NULL,
+    Data_nascita DATE NOT NULL,
+    Codice_Fiscale VARCHAR(16) NOT NULL,
+    Via VARCHAR(50),
+    Civico INT,
+    Comune INT,
+    PRIMARY KEY(ID),
+    FOREIGN KEY (Via, Civico, Comune)
+        REFERENCES Indirizzo(Via, Civico, Comune)
+    ) ENGINE=INNODB;
+
+    INSERT INTO Utente_Base (Nome, Cognome, Email, Username, Password, Cellulare, Data_Nascita, Codice_Fiscale, Via, Civico, Comune) VALUES
+    ('Sara','Bianchi','sarabianchi@gmail.com','jjjj','aaaa',3451234786,'1976-12-08','SRBNCH76C12F330L','via Carlo Agnoletti',11,26086),
+    ('Aimone','Cataldo','aimonecataldo@gmail.com','ffff','bbbb',3287856443,'1906-11-04','CTLMNA06D11H501R','via Pomponio Amalteo',9,26086),
+    ('Ferruccio','Tosi','ferrucciotosi@hotmail.it','gggg','cccc',3256787342,'1908-30-10','TSOFRC08R30F839X','vicolo Fonderia',12,26012),
+    ('Prospero','Puddu','prosperopuddu@live.com','zzzz','zzzz',3568754112,'1910-28-03','PDDPSP10C28D612B','via Foscarini',5,26089);
+
+
+
+CREATE TABLE IF NOT EXISTS Tipologia (
+    Nome VARCHAR(50) PRIMARY KEY, 
+    Descrizione VARCHAR(200)
+    ) ENGINE=INNODB;
+
+
+INSERT INTO Tipologia (Nome, Descrizione) VALUES
+('Animali','tutto sugli animali'),
+('Automobili abbandonati',NULL),
+('Barriere architettoniche',NULL),
+('Buche/strade dissestate',NULL),
+('Contenitori rifiuti',NULL),
+('Furti/microcriminalita',NULL),
+('Graffiti',NULL),
+('Immigrati/nomadi',NULL),
+('Inquinamento',NULL),
+('Illuminazione pubblica',NULL),
+('Abusivismo/Occupazione',NULL),
+('Parcheggi/Divieti di sosta',NULL),
+('Rifiuti',NULL),
+('Segnaletica Stradale / Semafori',NULL),
+('Situazioni di Degrado Sociale',NULL),
+('Verde Pubblico',NULL),
+('Atro',NULL);
+
+
+
+CREATE TABLE IF NOT EXISTS  Segnalazione (
+    Numero INT AUTO_INCREMENT,
+    Dataregistrazione timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    Tipo_S VARCHAR(20) NOT NULL,
+    Descrizione VARCHAR(600),
+    Rating INT,
+    Stato VARCHAR(20),
+    Risposta VARCHAR(600),
+    Tipologia VARCHAR(50),
+    IDBase INT,
+    IDAmministratore INT,
+    Via VARCHAR(50),
+    Civico INT,
+    Comune INT,
+    PRIMARY KEY(Numero),
+    FOREIGN KEY (Tipologia)
+        REFERENCES Tipologia (Nome),
+    FOREIGN KEY (IDBase)
+        REFERENCES Utente_Base(ID),
+    FOREIGN KEY (IDAmministratore)
+        REFERENCES Utente_Amministratore (ID),
+    FOREIGN KEY (Via, Civico, Comune)
+        REFERENCES Indirizzo(Via, Civico, Comune)
+    ) ENGINE=INNODB;
+
+
+INSERT INTO Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta,Tipologia,IDBase, IDAmministratore, Via, Civico, Comune) VALUES
+('DISFUNZIONE','ce un lampione non funzionante',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,NULL,'via Adige',23,26086 ),
+('SUGGERIMENTO','Sarebbe bello avere una rotonda al posto del semaforo',1,NULL,NULL,'Segnaletica Stradale / Semafori',2,3,'via G. Amendola',22,26086),
+('RECLAMO','ce qualcuno che abitualmente ruba le biciclette',1,'in lavorazione',NULL,'Furti/microcriminalita',3,2,'vicolo Fontane B',9,26012),
+('DISFUNZIONE','Manca la segnaletica in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,1,'via Fossagera',11,26089),
+('DISFUNZIONE','Il contenitore dell immondizia non è stato svuotato',2,NULL,NULL,'Contenitori rifiuti',2,1,'via Alzaia',8,26086);
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS Reparto (
+    ID VARCHAR(15) PRIMARY KEY, 
+    Nome VARCHAR(50) NOT NULL, 
+    Descrizione VARCHAR(200) DEFAULT NULL
+    ) ENGINE=INNODB;
+
+INSERT INTO Reparto (ID, Nome) VALUES
+('Uff001', 'Ambiente'),
+('Uff002', 'Appalti'), 
+('Uff003', 'Attività Produttive'), 
+('Uff004', 'Biblioteca'), 
+('Uff005', 'Corpo Polizia Locale'), 
+('Uff006', 'Edilizia Privata'), 
+('Uff007', 'Gabinetto Sindaco'), 
+('Uff008', 'Manutenzioni'), 
+('Uff009', 'Opere Pubbliche'), 
+('Uff010', 'Programmazione e Controllo di Gestione'), 
+('Uff011', 'Protezione Civile'), 
+('Uff012', ' Risorse Finanziarie'), 
+('Uff013', 'Risorse Tributarie e Patrimoniali'), 
+('Uff014', 'Risorse Umane e Organizzazione'), 
+('Uff015', 'Segreteria di Consiglio e Giunta'), 
+('Uff016', 'Servizi Culturali'), 
+('Uff017','Servizio Demografici ed Elettorali'), 
+('Uff018', 'Acquedotto - Fognatura e Depurazione Acque reflue'), 
+('Uff019', 'Servizi scolastici e sportivi'), 
+('Uff020', 'Servizi Sociali'), 
+('Uff021', 'Sistemi informativi'), 
+('Uff022', 'Urbanistica');
+
+
+
+
+CREATE TABLE IF NOT EXISTS Soggetto_Competente (
+    ID VARCHAR(15) PRIMARY KEY,
+    Nome VARCHAR(50) NOT NULL,
+    Descrizione VARCHAR(200),
+    Telefono BIGINT(20) NOT NULL,
+    Email VARCHAR(50),
+    Nome_Referente VARCHAR(50),
+    Cognome_Referente VARCHAR(50),
+    Servizio_Offerto VARCHAR(50),
+    Note VARCHAR(200),
+    P_IVA VARCHAR(13)
+    ) ENGINE=INNODB;
+
+INSERT INTO Soggetto_Competente (ID, Nome, Descrizione, Telefono, Email, Nome_Referente, Cognome_Referente, Servizio_Offerto, Note, P_IVA ) VALUES
+('VI001', 'Polizia locale',NULL,0978115544,'polizia@gmail.com','Tiziano','Bruni',NULL,NULL,NULL),
+('VI002','Vigili del fuoco',NULL,0564231154,'vigilifuoco@live.it','Jason','Born',NULL,NULL,NULL),
+('EL001','Elettrolux','elettricista',0967432133,'elettrolux@hotmail.com','Paolo','Ghione','cavetteria',NULL,'0987451187'),
+('ID001','Idroplanet','idraulico',0564896754,'idroplanet@yahoo.it','Giacomo','Sartori','idraulica',NULL,'78654320984'),
+('ETR001','ETRASPA','Gestione rifiuti',0234578766,'etraspa@gmail.com','Giovanni','Verdi',NULL,NULL,'2398652135');
+
+
+CREATE TABLE IF NOT EXISTS Coordinazione (
+    IDReparto VARCHAR(15),
+    NomeTipologia VARCHAR(50),
+    PRIMARY KEY(IDReparto, NomeTipologia),
+    FOREIGN KEY (NomeTipologia)
+        REFERENCES Tipologia (Nome),
+    FOREIGN KEY (IDReparto)
+        REFERENCES Reparto (ID)
+    ) ENGINE=INNODB;
+
+INSERT INTO Coordinazione (IDReparto, NomeTipologia) VALUES
+('Uff001','Verde Pubblico'),
+('Uff001','Rifiuti'),
+('Uff001','Contenitori rifiuti'),
+('Uff001','Barriere architettoniche'),
+('Uff002', 'Appalti'), 
+('Uff003', 'Attività Produttive'),  
+('Uff005','Immigrati/nomadi'),
+('Uff005','Situazioni di Degrado Sociale'),
+('Uff005','Parcheggi/Divieti di sosta'),
+('Uff005','Abusivismo/Occupazione'),
+('Uff005','Graffiti'),
+('Uff005','Furti/microcriminalita'),
+('Uff005','Animali' ),
+('Uff005','Automobili abbandonati'),
+('Uff008','Verde Pubblico'),
+('Uff008','Segnaletica Stradale / Semafori'),
+('Uff008','Inquinamento'),
+('Uff008','Graffiti'),
+('Uff008','Illuminazione pubblica'),
+('Uff008','Barriere architettoniche'),
+('Uff009','Buche/strade dissestate'), 
+('Uff009','Barriere architettoniche'),
+('Uff020','Situazioni di Degrado Sociale'),
+('Uff020','Abusivismo/Occupazione'),
+('Uff020','Immigrati/nomadi');
+
+
+
+
+CREATE TABLE IF NOT EXISTS Avviso (
+    IDReparto VARCHAR(15),
+    IDsoggettoc VARCHAR(15),
+    PRIMARY KEY (IDReparto, IDsoggettoc),
+    FOREIGN KEY (IDReparto)
+        REFERENCES Reparto(ID),
+    FOREIGN KEY (IDsoggettoc)
+        REFERENCES Soggetto_Competente (ID)
+    ) ENGINE=INNODB;
+
+INSERT INTO Avviso (IDReparto, IDsoggettoc) VALUES
+('Uff008','EL001'),
+('Uff005','VI001'),
+('Uff005','VI002'),
+('Uff001','ETR001'),
+('Uff018','ID001');
+
+
+
+CREATE TABLE IF NOT EXISTS Competenza (
+    IDReparto VARCHAR(15),
+    IDAmministratore INT,
+    PRIMARY KEY (IDReparto, IDAmministratore),
+    FOREIGN KEY (IDReparto)
+        REFERENCES Reparto (ID),
+    FOREIGN KEY (IDAmministratore)
+        REFERENCES Utente_Amministratore (ID)
+    ) ENGINE=INNODB;
+
+INSERT INTO Competenza (IDReparto, IDAmministratore) VALUES
+('Uff001',2),
+('Uff005',1),
+('Uff008',3),
+('Uff018',4);
+
+
+
 
 SET FOREIGN_KEY_CHECKS = 1;
