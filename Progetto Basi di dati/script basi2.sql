@@ -202,15 +202,15 @@ CREATE TABLE IF NOT EXISTS  Utente_Amministratore (
     Email VARCHAR(50) NOT NULL,
     Username VARCHAR(15) NOT NULL,
     Password VARCHAR(20) NOT NULL,
-    Telefono_Interno BIGINT(20) NOT NULL,
+    Telefono_Interno VARCHAR(25) NOT NULL,
     PRIMARY KEY(ID)
     ) ENGINE=INNODB;
 
     INSERT INTO Utente_Amministratore (Nome, Cognome, Email, Username, Password, Telefono_Interno) VALUES
-    ('Anna','Rossi','annarossi@gmail.com','aaaa','aaaa',0423494847),
-    ('Mario','Verdi','marioverdi@gmail.com','bbbb','bbbb',0423454746),
-    ('Gianni','Grigio','giannigrigio@gmail.com','cccc','cccc',0425679876),
-    ('Francesca','Blu','francescablu@gmail.com','eeee','eeee',0422345678);
+    ('Anna','Rossi','annarossi@gmail.com','aaaa','aaaa','0423494847'),
+    ('Mario','Verdi','marioverdi@gmail.com','bbbb','bbbb','0423454746'),
+    ('Gianni','Grigio','giannigrigio@gmail.com','cccc','cccc','0425679876'),
+    ('Francesca','Blu','francescablu@gmail.com','eeee','eeee','0422345678');
 
 
 CREATE TABLE IF NOT EXISTS  Utente_Base (
@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS  Utente_Base (
     Email VARCHAR(50) NOT NULL,
     Username VARCHAR(15) NOT NULL,
     Password VARCHAR(20) NOT NULL,
-    Cellulare BIGINT(15) NOT NULL,
+    Cellulare VARCHAR(25) NOT NULL,
     Data_nascita DATE NOT NULL,
     Codice_Fiscale VARCHAR(16) NOT NULL,
     Via VARCHAR(50),
@@ -232,10 +232,10 @@ CREATE TABLE IF NOT EXISTS  Utente_Base (
     ) ENGINE=INNODB;
 
     INSERT INTO Utente_Base (Nome, Cognome, Email, Username, Password, Cellulare, Data_Nascita, Codice_Fiscale, Via, Civico, Comune) VALUES
-    ('Sara','Bianchi','sarabianchi@gmail.com','jjjj','aaaa',3451234786,'1976-12-08','SRBNCH76C12F330L','via Carlo Agnoletti',11,26086),
-    ('Aimone','Cataldo','aimonecataldo@gmail.com','ffff','bbbb',3287856443,'1906-11-04','CTLMNA06D11H501R','via Pomponio Amalteo',9,26086),
-    ('Ferruccio','Tosi','ferrucciotosi@hotmail.it','gggg','cccc',3256787342,'1908-30-10','TSOFRC08R30F839X','vicolo Fonderia',12,26012),
-    ('Prospero','Puddu','prosperopuddu@live.com','zzzz','zzzz',3568754112,'1910-28-03','PDDPSP10C28D612B','via Foscarini',5,26089);
+    ('Sara','Bianchi','sarabianchi@gmail.com','jjjj','aaaa','3451234786','1976-12-08','SRBNCH76C12F330L','via Carlo Agnoletti',11,26086),
+    ('Aimone','Cataldo','aimonecataldo@gmail.com','ffff','bbbb','3287856443','1906-11-04','CTLMNA06D11H501R','via Pomponio Amalteo',9,26086),
+    ('Ferruccio','Tosi','ferrucciotosi@hotmail.it','gggg','cccc','3256787342','1908-30-10','TSOFRC08R30F839X','vicolo Fonderia',12,26012),
+    ('Prospero','Puddu','prosperopuddu@live.com','zzzz','zzzz','3568754112','1910-28-03','PDDPSP10C28D612B','via Foscarini',5,26089);
 
 
 
@@ -342,7 +342,7 @@ CREATE TABLE IF NOT EXISTS Soggetto_Competente (
     ID VARCHAR(15) PRIMARY KEY,
     Nome VARCHAR(50) NOT NULL,
     Descrizione VARCHAR(200),
-    Telefono BIGINT(20) NOT NULL,
+    Telefono VARCHAR(25) NOT NULL,
     Email VARCHAR(50),
     Nome_Referente VARCHAR(50),
     Cognome_Referente VARCHAR(50),
@@ -352,11 +352,11 @@ CREATE TABLE IF NOT EXISTS Soggetto_Competente (
     ) ENGINE=INNODB;
 
 INSERT INTO Soggetto_Competente (ID, Nome, Descrizione, Telefono, Email, Nome_Referente, Cognome_Referente, Servizio_Offerto, Note, P_IVA ) VALUES
-('VI001', 'Polizia locale',NULL,0978115544,'polizia@gmail.com','Tiziano','Bruni',NULL,NULL,NULL),
-('VI002','Vigili del fuoco',NULL,0564231154,'vigilifuoco@live.it','Jason','Born',NULL,NULL,NULL),
-('EL001','Elettrolux','elettricista',0967432133,'elettrolux@hotmail.com','Paolo','Ghione','cavetteria',NULL,'0987451187'),
-('ID001','Idroplanet','idraulico',0564896754,'idroplanet@yahoo.it','Giacomo','Sartori','idraulica',NULL,'78654320984'),
-('ETR001','ETRASPA','Gestione rifiuti',0234578766,'etraspa@gmail.com','Giovanni','Verdi',NULL,NULL,'2398652135');
+('VI001', 'Polizia locale',NULL,'0978115544','polizia@gmail.com','Tiziano','Bruni',NULL,NULL,NULL),
+('VI002','Vigili del fuoco',NULL,'0564231154','vigilifuoco@live.it','Jason','Born',NULL,NULL,NULL),
+('EL001','Elettrolux','elettricista','0967432133','elettrolux@hotmail.com','Paolo','Ghione','cavetteria',NULL,'0987451187'),
+('ID001','Idroplanet','idraulico','0564896754','idroplanet@yahoo.it','Giacomo','Sartori','idraulica',NULL,'78654320984'),
+('ETR001','ETRASPA','Gestione rifiuti','0234578766','etraspa@gmail.com','Giovanni','Verdi',NULL,NULL,'2398652135');
 
 
 CREATE TABLE IF NOT EXISTS Coordinazione (
@@ -373,9 +373,7 @@ INSERT INTO Coordinazione (IDReparto, NomeTipologia) VALUES
 ('Uff001','Verde Pubblico'),
 ('Uff001','Rifiuti'),
 ('Uff001','Contenitori rifiuti'),
-('Uff001','Barriere architettoniche'),
-('Uff002', 'Appalti'), 
-('Uff003', 'Attività Produttive'),  
+('Uff001','Barriere architettoniche'),  
 ('Uff005','Immigrati/nomadi'),
 ('Uff005','Situazioni di Degrado Sociale'),
 ('Uff005','Parcheggi/Divieti di sosta'),
