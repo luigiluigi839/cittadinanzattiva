@@ -1,9 +1,0 @@
-http://tecweb2016.studenti.math.unipd.it/cmattei/index.php    18
-http://tecweb2016.studenti.math.unipd.it/marizzo/Sito/        27
-https://tecweb2016.studenti.math.unipd.it/mvianell/           26
-http://tecweb2016.studenti.math.unipd.it/dciagola/TW/         21
-
-Punti Progetto
-
-HTML CSS ACC. PHP Javascript Mobile/Stampa Progettazione Relazione
-  4   4   3    3      2            1             6           9
