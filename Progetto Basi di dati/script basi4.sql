@@ -365,7 +365,7 @@ INSERT INTO Utente_Amministratore (Nome, Cognome, Email, Username, Password, Tel
 
 INSERT INTO Utente_Base (Nome, Cognome, Email, Username, Password, Cellulare, Data_Nascita, Codice_Fiscale, Via, Civico, Comune) VALUES
     ('Sara','Bianchi','sarabianchi@gmail.com','jjjj','aaaa','3451234786','1976-12-08','SRBNCH76C12F330L','via Carlo Agnoletti',11,26086),
-    ('Aimone','Cataldo','aimonecataldo@gmail.com','ffff','bbbb','3287856443','1906-11-04','CTLMNA06D11H501R','via Pomponio Amalteo',9,26086),
+    ('Simone','Cataldo','simonecataldo@gmail.com','ffff','bbbb','3287856443','1906-11-04','CTLMNA06D11H501R','via Pomponio Amalteo',9,26086),
     ('Ferruccio','Tosi','ferrucciotosi@hotmail.it','gggg','cccc','3256787342','1908-10-30','TSOFRC08R30F839X','vicolo Fonderia',12,26012),
     ('Prospero','Puddu','prosperopuddu@live.com','zzzz','zzzz','3568754112','1910-03-20','PDDPSP10C28D612B','via Foscarini',5,26089);
 
@@ -393,7 +393,16 @@ INSERT INTO Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta,Tipologia
 ('SUGGERIMENTO','Sarebbe bello avere una rotonda al posto del semaforo',1,NULL,NULL,'Segnaletica Stradale / Semafori',2,3,'via G. Amendola',22,26086),
 ('RECLAMO','ce qualcuno che abitualmente ruba le biciclette',1,'in lavorazione',NULL,'Furti/microcriminalita',3,2,'vicolo Fontane B',9,26012),
 ('DISFUNZIONE','Manca la segnaletica in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,1,'via Fossagera',11,26089),
-('DISFUNZIONE','Il contenitore dell immondizia non è stato svuotato',2,NULL,NULL,'Contenitori rifiuti',2,1,'via Alzaia',8,26086);
+('DISFUNZIONE','Manca la segnaletica1 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,2,'via Fossagera',11,26089),
+('DISFUNZIONE','Manca la segnaletica2 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,3,'via Fossagera',11,26089),
+('DISFUNZIONE','Manca la segnaletica3 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,3,'via Fossagera',11,26089),
+('DISFUNZIONE','Il contenitore dell immondizia non è stato svuotato',2,NULL,NULL,'Contenitori rifiuti',2,1,'via Alzaia',8,26086),
+('DISFUNZIONE','ce un lampione non funzionante2',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,1,'via Adige',23,26086 ),
+('DISFUNZIONE','ce un lampione non funzionante3',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,2,'via Adige',23,26086 ),
+('DISFUNZIONE','ce un lampione non funzionante4',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,3,'via Adige',23,26086 ),
+('DISFUNZIONE','ce un lampione non funzionante5',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,3,'via Adige',23,26086 ),
+('DISFUNZIONE','ce un lampione non funzionante6',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,2,'via Adige',23,26086 ),
+('DISFUNZIONE','ce un lampione non funzionante7',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,3,'via Adige',23,26086 );
 
 INSERT INTO Reparto (ID, Nome) VALUES
 ('Uff001', 'Ambiente'),
@@ -470,12 +479,12 @@ INSERT INTO Avviso (IDReparto, IDsoggettoc) VALUES
 INSERT INTO Utente_Base (Nome, Cognome, Email, Username, Password, Cellulare, Data_Nascita, Codice_Fiscale, Via, Civico, Comune) VALUES
 ('Angelo','Nello','Angelonello@live.it','kkkk','llll','3253324321','1987-05-16','FNKDHI56M43F295G','via Flaminio',7,26012);
 
-INSERT INTO Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta,Tipologia,IDBase, IDAmministratore, Via, Civico, Comune) VALUES
+/*INSERT INTO Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta,Tipologia,IDBase, IDAmministratore, Via, Civico, Comune) VALUES
 ('DISFUNZIONE','ce un lampione non funzionante',1,'in lavorazione',NULL, 'Illuminazione pubblica',5,NULL,'via Adige',23,26086 );
 
-/*Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta,Tipologia,IDBase, IDAmministratore, Via, Civico, Comune) VALUES
+Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta,Tipologia,IDBase, IDAmministratore, Via, Civico, Comune) VALUES
 ('DISFUNZIONE','ce un lampione non funzionante',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,NULL,'via Adige',23,26086 ),
-*/
+
 
 DELIMITER &&
 CREATE PROCEDURE CambiaPostazioneAmm (IN CodDipendente INT, IN NuovoReparto VARCHAR(15))
@@ -486,9 +495,7 @@ WHERE IDAmministratore = CodDipendente;
 END&&
 DELIMITER ;
 
-CALL CambiaPostazioneDip(1,'Uff008');
-
-
+CALL CambiaPostazioneDip(1,'Uff008');*/
 
 
 CREATE VIEW CasiGest(g_Nome,g_Cognome,g_NumeroDiCasiGestiti) AS
@@ -508,4 +515,5 @@ FROM(SELECT * FROM casigest
 LEFT JOIN casirisolti ON casigest.g_Nome = casirisolti.r_Nome
 UNION 
 SELECT * FROM casigest
-RIGHT JOIN casirisolti ON casigest.g_Nome = casirisolti.r_Nome)AS P;
+RIGHT JOIN casirisolti ON casigest.g_Nome = casirisolti.r_Nome)AS P  
+ORDER BY `NumeroDiCasiRisolti`  DESC
