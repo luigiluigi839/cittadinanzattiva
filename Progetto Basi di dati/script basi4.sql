@@ -498,6 +498,8 @@ DELIMITER ;
 CALL CambiaPostazioneDip(1,'Uff008');*/
 
 
+/*Query 1, Confronta per ogni amministratore i casi gestiti e i casi risolti ordinandoli per il numero di casi risolti dal più grande al più piccolo. */
+
 CREATE VIEW CasiGest(g_Nome,g_Cognome,g_NumeroDiCasiGestiti) AS
 SELECT u.`Nome`,u.`Cognome`,COUNT(u.`Nome`) AS Casi_Gestiti
 FROM `utente_amministratore`AS u, `segnalazione` AS s
@@ -517,3 +519,23 @@ UNION
 SELECT * FROM casigest
 RIGHT JOIN casirisolti ON casigest.g_Nome = casirisolti.r_Nome)AS P  
 ORDER BY `NumeroDiCasiRisolti`  DESC
+
+/*Query 2, mostra il numero di segnalazioni effettuate dagli utenti base solo se hanno effettuato più 3 segnalazioni ordinandole per il numero di segnalazioni effettuate dal più grande al più piccolo*/
+
+SELECT b.`ID`, b.`Nome`, b.`Cognome`,COUNT(b.ID) AS NumeroSegnalazioniEffettuate
+FROM `utente_base` AS b
+LEFT JOIN segnalazione ON b.ID = segnalazione.IDBase
+GROUP BY b.nome  
+HAVING NumeroSegnalazioniEffettuate>3
+ORDER BY NumeroSegnalazioniEffettuate DESC
+
+/*Query 3, mostra il numero totale di segnalazioni effettuate per ogni comune ordinandole per il numero di segnalazioni effettuate dal più grande al più piccolo*/
+
+SELECT `Cod_ISTAT`, `Nome`, `CAP`, COUNT(comune.Cod_ISTAT) AS NumeroSegnalazioniEffettuate
+FROM `comune`
+RIGHT JOIN segnalazione ON comune.Cod_ISTAT = segnalazione.Comune
+GROUP BY comune.Cod_ISTAT
+ORDER BY NumeroSegnalazioniEffettuate DESC
+
+/*Query 4*/
+
