@@ -464,7 +464,10 @@ INSERT INTO Coordinazione (IDReparto, NomeTipologia) VALUES
 
 INSERT INTO Competenza (IDReparto, IDAmministratore) VALUES
 ('Uff001',2),
+('Uff001',3),
+('Uff001',4),
 ('Uff005',1),
+('Uff005',2),
 ('Uff008',3),
 ('Uff018',4);
 
