@@ -586,7 +586,7 @@ LEFT JOIN risoltirep001 ON gestitirep001.g_Nome = risoltirep001.r_Nome
 UNION 
 SELECT * FROM gestitirep001
 RIGHT JOIN risoltirep001 ON gestitirep001.g_Nome = risoltirep001.r_Nome)AS P
-ORDER BY `NumeroDiCasiRisolti`  DESC
+ORDER BY `NumeroDiCasiRisolti`  DESC;
 
 /*Query 5, trovare tutte le segnalazioni risolte dal reparto “Uff005” */
 
