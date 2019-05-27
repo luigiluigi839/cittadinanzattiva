@@ -396,6 +396,8 @@ INSERT INTO Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta,Tipologia
 ('DISFUNZIONE','Manca la segnaletica1 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,2,'via Fossagera',11,26089),
 ('DISFUNZIONE','Manca la segnaletica2 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,3,'via Fossagera',11,26089),
 ('DISFUNZIONE','Manca la segnaletica3 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,4,'via Fossagera',11,26089),
+('DISFUNZIONE','Manca la segnaletica4 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,3,'via Fossagera',11,26089),
+('DISFUNZIONE','Manca la segnaletica5 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,2,'via Fossagera',11,26089),
 ('DISFUNZIONE','Il contenitore dell immondizia non è stato svuotato',2,NULL,NULL,'Contenitori rifiuti',2,4,'via Alzaia',8,26086),
 ('DISFUNZIONE','ce un lampione non funzionante2',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,1,'via Adige',23,26086 ),
 ('DISFUNZIONE','ce un lampione non funzionante3',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,2,'via Adige',23,26086 ),
