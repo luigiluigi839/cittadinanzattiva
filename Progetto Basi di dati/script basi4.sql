@@ -587,3 +587,18 @@ UNION
 SELECT * FROM gestitirep001
 RIGHT JOIN risoltirep001 ON gestitirep001.g_Nome = risoltirep001.r_Nome)AS P
 ORDER BY `NumeroDiCasiRisolti`  DESC
+
+/*Query 5, trovare tutte le segnalazioni risolte dal reparto “Uff005” */
+
+DROP VIEW IF EXISTS utentirep005;
+CREATE VIEW utentirep005(ID,Nome,Cognome) AS
+SELECT
+        utente_amministratore.ID,utente_amministratore.Nome,utente_amministratore.Cognome
+    FROM
+        `competenza`
+    LEFT JOIN utente_amministratore ON competenza.IDAmministratore = utente_amministratore.ID
+    WHERE
+        competenza.IDReparto = "uff005";
+
+SELECT * FROM segnalazione, utentirep005
+WHERE segnalazione.IDAmministratore=utentirep005.ID AND segnalazione.Stato="risolto"
