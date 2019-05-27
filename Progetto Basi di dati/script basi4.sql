@@ -541,7 +541,7 @@ RIGHT JOIN segnalazione ON comune.Cod_ISTAT = segnalazione.Comune
 GROUP BY comune.Cod_ISTAT
 ORDER BY NumeroSegnalazioniEffettuate DESC;
 
-/*Query 4, trovare tutte le segnalazioni gestire dal reparto “Uff001” */
+/*Query 4, trovare il numero di segnalazioni gestite e risolte dal reparto “Uff001” divise per utente e ordinarle per il numero di casi risolti */
 
 DROP VIEW IF EXISTS utentirep001;
 CREATE VIEW utentirep001(ID,Nome,Cognome) AS
