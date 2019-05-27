@@ -393,10 +393,10 @@ INSERT INTO Segnalazione (Tipo_S, Descrizione, Rating, Stato, Risposta,Tipologia
 ('SUGGERIMENTO','Sarebbe bello avere una rotonda al posto del semaforo',1,NULL,NULL,'Segnaletica Stradale / Semafori',2,3,'via G. Amendola',22,26086),
 ('RECLAMO','ce qualcuno che abitualmente ruba le biciclette',1,'in lavorazione',NULL,'Furti/microcriminalita',3,2,'vicolo Fontane B',9,26012),
 ('DISFUNZIONE','Manca la segnaletica in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,1,'via Fossagera',11,26089),
-('DISFUNZIONE','Manca la segnaletica1 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,2,'via Fossagera',11,26089),
-('DISFUNZIONE','Manca la segnaletica2 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,3,'via Fossagera',11,26089),
-('DISFUNZIONE','Manca la segnaletica3 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,3,'via Fossagera',11,26089),
-('DISFUNZIONE','Il contenitore dell immondizia non è stato svuotato',2,NULL,NULL,'Contenitori rifiuti',2,1,'via Alzaia',8,26086),
+('DISFUNZIONE','Manca la segnaletica1 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',3,2,'via Fossagera',11,26089),
+('DISFUNZIONE','Manca la segnaletica2 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',3,3,'via Fossagera',11,26089),
+('DISFUNZIONE','Manca la segnaletica3 in tutta la strada',3,'risolto','Abbiamo ripristinato la strada','Segnaletica Stradale / Semafori',4,4,'via Fossagera',11,26089),
+('DISFUNZIONE','Il contenitore dell immondizia non è stato svuotato',2,NULL,NULL,'Contenitori rifiuti',2,4,'via Alzaia',8,26086),
 ('DISFUNZIONE','ce un lampione non funzionante2',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,1,'via Adige',23,26086 ),
 ('DISFUNZIONE','ce un lampione non funzionante3',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,2,'via Adige',23,26086 ),
 ('DISFUNZIONE','ce un lampione non funzionante4',1,'in lavorazione',NULL, 'Illuminazione pubblica',1,3,'via Adige',23,26086 ),
@@ -521,7 +521,7 @@ LEFT JOIN casirisolti ON casigest.g_Nome = casirisolti.r_Nome
 UNION 
 SELECT * FROM casigest
 RIGHT JOIN casirisolti ON casigest.g_Nome = casirisolti.r_Nome)AS P  
-ORDER BY `NumeroDiCasiRisolti`  DESC
+ORDER BY `NumeroDiCasiRisolti`  DESC;
 
 /*Query 2, mostra il numero di segnalazioni effettuate dagli utenti base solo se hanno effettuato più 3 segnalazioni ordinandole per il numero di segnalazioni effettuate dal più grande al più piccolo*/
 
@@ -530,7 +530,7 @@ FROM `utente_base` AS b
 LEFT JOIN segnalazione ON b.ID = segnalazione.IDBase
 GROUP BY b.nome  
 HAVING NumeroSegnalazioniEffettuate>3
-ORDER BY NumeroSegnalazioniEffettuate DESC
+ORDER BY NumeroSegnalazioniEffettuate DESC;
 
 /*Query 3, mostra il numero totale di segnalazioni effettuate per ogni comune ordinandole per il numero di segnalazioni effettuate dal più grande al più piccolo*/
 
@@ -540,5 +540,5 @@ RIGHT JOIN segnalazione ON comune.Cod_ISTAT = segnalazione.Comune
 GROUP BY comune.Cod_ISTAT
 ORDER BY NumeroSegnalazioniEffettuate DESC
 
-/*Query 4*/
+/*Query 4, trovare tutte le segnalazioni gestire dal reparto “Uff001” */
 
