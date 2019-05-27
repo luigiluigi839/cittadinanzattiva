@@ -502,15 +502,14 @@ DELIMITER ;
 
 CALL CambiaPostazioneDip(1,'Uff008');*/
 
-
 /*Query 1, Confronta per ogni amministratore i casi gestiti e i casi risolti ordinandoli per il numero di casi risolti dal più grande al più piccolo. */
-
+DROP VIEW IF EXISTS casigest;
 CREATE VIEW CasiGest(g_Nome,g_Cognome,g_NumeroDiCasiGestiti) AS
 SELECT u.`Nome`,u.`Cognome`,COUNT(u.`Nome`) AS Casi_Gestiti
 FROM `utente_amministratore`AS u, `segnalazione` AS s
 WHERE u.`ID`=s.`IDamministratore`
 GROUP BY Nome;
-
+DROP VIEW IF EXISTS casirisolti;
 CREATE VIEW CasiRisolti(r_Nome,r_Cognome,r_NumeroDiCasiRisolti) AS
 SELECT u.`Nome`,u.`Cognome`,COUNT(u.`Nome`) AS Casi_Risolti
 FROM `utente_amministratore`AS u, `segnalazione` AS s
@@ -540,7 +539,51 @@ SELECT `Cod_ISTAT`, `Nome`, `CAP`, COUNT(comune.Cod_ISTAT) AS NumeroSegnalazioni
 FROM `comune`
 RIGHT JOIN segnalazione ON comune.Cod_ISTAT = segnalazione.Comune
 GROUP BY comune.Cod_ISTAT
-ORDER BY NumeroSegnalazioniEffettuate DESC
+ORDER BY NumeroSegnalazioniEffettuate DESC;
 
 /*Query 4, trovare tutte le segnalazioni gestire dal reparto “Uff001” */
 
+DROP VIEW IF EXISTS utentirep001;
+CREATE VIEW utentirep001(ID,Nome,Cognome) AS
+SELECT
+        utente_amministratore.ID,utente_amministratore.Nome,utente_amministratore.Cognome
+    FROM
+        `competenza`
+    LEFT JOIN utente_amministratore ON competenza.IDAmministratore = utente_amministratore.ID
+    WHERE
+        competenza.IDReparto = "uff001";
+DROP VIEW IF EXISTS risoltirep001;
+CREATE VIEW risoltirep001(r_Nome,r_Cognome,r_CasiRisolti) AS
+SELECT
+    u.`Nome`,
+    u.`Cognome`,
+    COUNT(u.`Nome`) AS Casi_Risolti
+FROM
+    utentirep001 AS u,
+`segnalazione` AS s
+WHERE
+    u.`ID` = s.`IDamministratore` AND s.`Stato` = "risolto"
+GROUP BY
+    Nome;
+    
+DROP VIEW IF EXISTS gestitirep001;
+CREATE VIEW gestitirep001(g_Nome,g_Cognome,g_CasiGestiti) AS
+SELECT
+    u.`Nome`,
+    u.`Cognome`,
+    COUNT(u.`Nome`) AS Casi_Gestiti
+FROM
+    utentirep001 AS u,
+`segnalazione` AS s
+WHERE
+    u.`ID` = s.`IDamministratore` 
+GROUP BY
+    Nome;
+    
+SELECT g_Nome AS Nome, g_Cognome AS Cognome, g_CasiGestiti AS NumeroDiCasiGestiti, r_CasiRisolti AS NumeroDiCasiRisolti
+FROM(SELECT * FROM gestitirep001
+LEFT JOIN risoltirep001 ON gestitirep001.g_Nome = risoltirep001.r_Nome
+UNION 
+SELECT * FROM gestitirep001
+RIGHT JOIN risoltirep001 ON gestitirep001.g_Nome = risoltirep001.r_Nome)AS P
+ORDER BY `NumeroDiCasiRisolti`  DESC
