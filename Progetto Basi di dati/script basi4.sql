@@ -604,7 +604,7 @@ SELECT
         competenza.IDReparto = "uff005";
 
 SELECT * FROM segnalazione, utentirep005
-WHERE segnalazione.IDAmministratore=utentirep005.ID AND segnalazione.Stato="risolto"
+WHERE segnalazione.IDAmministratore=utentirep005.ID AND segnalazione.Stato="risolto";
 
 /*Query 6, trovare il numero di segnalazioni gestite e risolte dal reparto “Uff003” divise per tipo e ordinarle per il numero di casi risolti */
 
