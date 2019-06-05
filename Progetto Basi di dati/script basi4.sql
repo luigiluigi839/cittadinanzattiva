@@ -471,7 +471,10 @@ INSERT INTO Competenza (IDReparto, IDAmministratore) VALUES
 ('Uff005',1),
 ('Uff005',2),
 ('Uff008',3),
+('Uff003',3),
+('Uff003',4),
 ('Uff018',4);
+
 
 
 INSERT INTO Avviso (IDReparto, IDsoggettoc) VALUES
