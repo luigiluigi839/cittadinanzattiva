@@ -605,3 +605,62 @@ SELECT
 
 SELECT * FROM segnalazione, utentirep005
 WHERE segnalazione.IDAmministratore=utentirep005.ID AND segnalazione.Stato="risolto"
+
+/*Query 6, trovare il numero di segnalazioni gestite e risolte dal reparto “Uff003” divise per tipo e ordinarle per il numero di casi risolti */
+
+DROP VIEW IF EXISTS utentirep003;
+CREATE VIEW utentirep003(ID,Nome,Cognome) AS
+SELECT
+        utente_amministratore.ID,utente_amministratore.Nome,utente_amministratore.Cognome
+    FROM
+        `competenza`
+    LEFT JOIN utente_amministratore ON competenza.IDAmministratore = utente_amministratore.ID
+    WHERE
+        competenza.IDReparto = "uff003";
+
+DROP VIEW IF EXISTS risoltirep003;
+CREATE VIEW risoltirep003(r_Numero,r_Tipo,r_Stato,r_IdAmm) AS
+SELECT
+	s.numero,
+    s.Tipo_S,
+    s.Stato,
+    s.IDAmministratore
+FROM
+    utentirep003 AS u,
+`segnalazione` AS s
+WHERE
+    u.`ID` = s.`IDamministratore` AND s.`Stato` = "risolto";
+
+DROP VIEW IF EXISTS gestitirep003;
+
+CREATE VIEW gestitirep003(g_Numero,g_Tipo,g_Stato,g_IdAmm) AS
+SELECT
+	s.numero,
+    s.Tipo_S,
+    s.Stato,
+    s.IDAmministratore
+FROM
+    utentirep003 AS u,
+`segnalazione` AS s
+WHERE
+    u.`ID` = s.`IDamministratore` ;
+
+DROP VIEW IF EXISTS tipogestitirep003;
+
+CREATE VIEW tipogestitirep003(g_Tipo,Gestite) AS
+SELECT `g_Tipo`,COUNT(g_Numero) FROM `gestitirep003` WHERE 1
+GROUP BY g_Tipo;
+
+DROP VIEW IF EXISTS tiporisoltirep003;
+
+CREATE VIEW tiporisoltirep003(r_Tipo,Risolte) AS
+SELECT `r_Tipo`,COUNT(r_Numero) FROM risoltirep003 WHERE 1
+GROUP BY r_Tipo;
+
+SELECT g_Tipo AS Tipo,Gestite,Risolte FROM(
+SELECT * FROM tipogestitirep003
+LEFT JOIN tiporisoltirep003 ON tipogestitirep003.g_Tipo=tiporisoltirep003.r_Tipo
+UNION
+SELECT * FROM tipogestitirep003
+RIGHT JOIN tiporisoltirep003 ON tipogestitirep003.g_Tipo=tiporisoltirep003.r_Tipo) AS C
+ORDER BY Risolte DESC;
