@@ -610,40 +610,19 @@ WHERE segnalazione.IDAmministratore=utentirep005.ID AND segnalazione.Stato="riso
 
 DROP VIEW IF EXISTS utentirep003;
 CREATE VIEW utentirep003(ID,Nome,Cognome) AS
-SELECT
-        utente_amministratore.ID,utente_amministratore.Nome,utente_amministratore.Cognome
-    FROM
-        `competenza`
-    LEFT JOIN utente_amministratore ON competenza.IDAmministratore = utente_amministratore.ID
-    WHERE
-        competenza.IDReparto = "uff003";
+SELECT utente_amministratore.ID,utente_amministratore.Nome,utente_amministratore.Cognome
+FROM `competenza`
+LEFT JOIN utente_amministratore ON competenza.IDAmministratore = utente_amministratore.ID
+WHERE competenza.IDReparto = "uff003";
 
-DROP VIEW IF EXISTS risoltirep003;
-CREATE VIEW risoltirep003(r_Numero,r_Tipo,r_Stato,r_IdAmm) AS
-SELECT
-	s.numero,
-    s.Tipo_S,
-    s.Stato,
-    s.IDAmministratore
-FROM
-    utentirep003 AS u,
-`segnalazione` AS s
-WHERE
-    u.`ID` = s.`IDamministratore` AND s.`Stato` = "risolto";
 
 DROP VIEW IF EXISTS gestitirep003;
 
 CREATE VIEW gestitirep003(g_Numero,g_Tipo,g_Stato,g_IdAmm) AS
-SELECT
-	s.numero,
-    s.Tipo_S,
-    s.Stato,
-    s.IDAmministratore
-FROM
-    utentirep003 AS u,
-`segnalazione` AS s
-WHERE
-    u.`ID` = s.`IDamministratore` ;
+SELECT s.numero,s.Tipo_S,s.Stato,s.IDAmministratore
+FROM utentirep003 AS u,`segnalazione` AS s
+WHERE u.`ID` = s.`IDamministratore` ;
+
 
 DROP VIEW IF EXISTS tipogestitirep003;
 
@@ -654,8 +633,11 @@ GROUP BY g_Tipo;
 DROP VIEW IF EXISTS tiporisoltirep003;
 
 CREATE VIEW tiporisoltirep003(r_Tipo,Risolte) AS
-SELECT `r_Tipo`,COUNT(r_Numero) FROM risoltirep003 WHERE 1
-GROUP BY r_Tipo;
+SELECT `g_Tipo`,COUNT(g_Numero) 
+FROM gestitirep003 
+WHERE gestitirep003.g_Stato="Risolto"
+GROUP BY g_Tipo;
+
 
 SELECT g_Tipo AS Tipo,Gestite,Risolte FROM(
 SELECT * FROM tipogestitirep003
